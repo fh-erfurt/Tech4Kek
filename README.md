@@ -1,2 +1,2 @@
 # Tech4Kek
-PC-Verleih von Lukas Arnold, John Reinecke, Marvin Hof, Thomas Konietzny!
+Hardware Verleih und Cloud Computing von Lukas Arnold, John Reinecke, Marvin Hof, Thomas Konietzny!
