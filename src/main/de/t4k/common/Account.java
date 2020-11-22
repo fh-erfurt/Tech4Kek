@@ -1,5 +1,5 @@
 package de.t4k.common;
-
+//22.11.2020
 public class Account {
     private AccountRole m_Role; //Die Gespeicherte Enum Variable
     private String m_EMail;
