@@ -18,7 +18,7 @@ public class Tech4Kek {
         Account TheACC = new Account();
         TheACC.SetEMail("Jan204@t-online.de");
         TheACC.SetPassword("Techkekerino123");
-        TheACC.SetRole(Roles.User);
+        TheACC.SetRole(AccountRole.Customer);
         Person ThePerson = new Person();
         //Input Person Data
         TheACC.SetPerson(ThePerson);
