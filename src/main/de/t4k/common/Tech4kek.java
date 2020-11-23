@@ -1,9 +1,9 @@
-package de.t4k.common;
-//22.11.2020
+package t4k.common;
+
 import java.time.LocalDateTime;
 
 
-public class Tech4Kek {
+public class Tech4kek {
 
     public static void main(String[] args) {
         System.out.println("Hello");

@@ -1,5 +1,6 @@
-package de.t4k.common;
-//22.11.2020
+package t4k.common;
+import java.util.Scanner;
+
 public class Account {
     private AccountRole m_Role; //Die Gespeicherte Enum Variable
     private String m_EMail;
@@ -8,11 +9,23 @@ public class Account {
 
     //Functions
     public void ChangePW(Account ACC) {
-        String altPW ="";
-        System.out.println("Geben Sie altes PW ein:");
-        altPW =System.in.available();
-        if(altPW != ACC.GetPassword()) {
-            return;
+        String altPW = "", newPW = "";
+        boolean isOK = false;
+        Scanner Input = new Scanner(System.in);
+        System.out.println("Geben Sie das alte PW ein:");
+        altPW = Input.next();
+
+        if (altPW != ACC.m_Password) {
+            while (isOK == false) {
+                isOK = true;
+                if (altPW != ACC.m_Password) {
+                    System.out.println("PW ist nicht korrekt:");
+                    isOK = false;
+                    altPW = Input.next();
+                }
+            }
+
+
         }
     }
 
