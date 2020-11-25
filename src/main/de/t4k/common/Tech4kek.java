@@ -15,13 +15,14 @@ public class Tech4kek {
 
         //Daten werden in Program geladen aus DB in Acc
 
+        Person ThePerson = new Person();
         Account TheACC = new Account();
         TheACC.SetEMail("Jan204@t-online.de");
         TheACC.SetPassword("Techkekerino123");
         TheACC.SetRole(AccountRole.Customer);
-        Person ThePerson = new Person();
-        //Input Person Data
+        //Set Person Data from DB
         TheACC.SetPerson(ThePerson);
+        TheACC.GetPerson().setM_firstname("Arnold");
 
         System.out.println(TheACC.GetEMail());
 

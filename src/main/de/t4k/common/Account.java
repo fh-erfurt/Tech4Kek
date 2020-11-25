@@ -9,7 +9,7 @@ public class Account {
 
     //Functions
     public void ChangePW(Account ACC) {
-        String altPW = "", newPW = "";
+        String altPW = "", neuPW = "", helper = "";
         boolean isOK = false;
         Scanner Input = new Scanner(System.in);
         System.out.println("Geben Sie das alte PW ein:");
@@ -24,26 +24,36 @@ public class Account {
                     altPW = Input.next();
                 }
             }
-
-
         }
+        do {
+            System.out.println("Geben Sie das neue PW ein:");
+            neuPW = Input.next();
+            System.out.println("Geben Sie das neue PW erneut ein:");
+            helper = Input.next();
+
+            if(neuPW != helper) {
+                System.out.println("Passwörter stimmen nicht überein");
+            }
+        }while(neuPW != helper);
+        ACC.SetPassword(neuPW); //or change it in the DB in the future
+        System.out.println("Passwort wurde geändert");
     }
 
     //Set/Get Functions
-    public void SetRole(AccountRole data) {
-        m_Role = data;
+    public void SetRole(AccountRole m_Role) {
+        this.m_Role = m_Role;
     }
 
-    public void SetEMail(String data) {
-        m_EMail = data;
+    public void SetEMail(String m_EMail) {
+        this.m_EMail = m_EMail;
     }
 
-    public void SetPassword(String data) {
-        m_Password = data;
+    public void SetPassword(String m_Password) {
+        this.m_Password = m_Password;
     }
 
-    public void SetPerson(Person data) {
-        m_ThePerson = data;
+    public void SetPerson(Person m_ThePerson) {
+        this.m_ThePerson = m_ThePerson;
     }
 
     public AccountRole GetRole() {
