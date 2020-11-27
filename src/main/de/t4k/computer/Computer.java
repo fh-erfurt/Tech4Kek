@@ -1,10 +1,10 @@
-package t4k.common;
+package t4k.computer;
 
 public class Computer {
     private int m_ItemId;
-    private Details m_ComputerDetails;
+    private Computerdetails m_ComputerDetails;
     private Manufacturer m_ManufacturerOfComputer;
-    private enum m_Category{}
+    private Category m_Category;
     private int m_StockNumber;
     private Computer m_NextComputer;
 
@@ -16,11 +16,11 @@ public class Computer {
         this.m_ItemId = m_ItemId;
     }
 
-    public Details getM_ComputerDetails() {
+    public Computerdetails getM_ComputerDetails() {
         return m_ComputerDetails;
     }
 
-    public void setM_ComputerDetails(Details m_ComputerDetails) {
+    public void setM_ComputerDetails(Computerdetails m_ComputerDetails) {
         this.m_ComputerDetails = m_ComputerDetails;
     }
 

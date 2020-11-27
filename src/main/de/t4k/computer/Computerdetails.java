@@ -1,6 +1,6 @@
-package t4k.common;
+package t4k.computer;
 
-public class Details {
+public class Computerdetails{
     private String m_Description;
     private String m_DetailName;
     private double m_Price;
@@ -11,7 +11,7 @@ public class Details {
     private String m_Gpu;
     private int m_VramAmount;
     private double m_GpuClock;
-    private String m_Ram;
+    private String m_Ramname;
     private int m_RamSize;
 
     public String getM_Description() {
@@ -94,12 +94,12 @@ public class Details {
         this.m_GpuClock = m_GpuClock;
     }
 
-    public String getM_Ram() {
-        return m_Ram;
+    public String getM_Ramname() {
+        return m_Ramname;
     }
 
     public void setM_Ram(String m_Ram) {
-        this.m_Ram = m_Ram;
+        this.m_Ramname = m_Ram;
     }
 
     public int getM_RamSize() {

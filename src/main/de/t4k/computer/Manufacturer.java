@@ -1,4 +1,6 @@
-package t4k.common;
+package t4k.computer;
+
+import t4k.common.Address;
 
 public class Manufacturer {
     private String m_ManName;
