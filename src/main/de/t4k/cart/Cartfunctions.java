@@ -9,15 +9,17 @@ import t4k.warehouse.Warehouse;
 
 public class Cartfunctions {
 
-    public static void addObjekt(Cart TheCart, Computer TheComputer, int number){
+    public static boolean addObjekt(Cart TheCart, Computer TheComputer, int number){
         //Übergibt den Knoten von Warehouse des ersten PC
         Object Anchor = TheCart.getM_firstObject();
 
         //Scroolt durch die Liste bis zum letzten PC
         while (Anchor.getM_nextObject() != null){
             Anchor = Anchor.getM_nextObject();
+            if(Anchor.getM_Computer() == TheComputer){
+                return false; //False wenn PC schon in der Liste ist
+            };
         }
-
         //Macht neuen PC und setzt nachfolger auf null
         Object NewObject = new Object();
         NewObject.setM_nextObject(null);
@@ -26,6 +28,7 @@ public class Cartfunctions {
         NewObject.setM_CountOfComputers(number);
 
         Anchor.setM_nextObject(NewObject);
+        return true;
     };
 
     public static boolean delObjekt(Cart TheCart, int ItemID){ //NOCH NICHT FERTIG
@@ -73,7 +76,6 @@ public class Cartfunctions {
         }
 
         return Placeholder;
-
     }
 
 
