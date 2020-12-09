@@ -2,10 +2,10 @@ package t4k.cart;
 
 import t4k.computer.Computer;
 
-public class Object {
+public class Element {
     private Computer m_Computer;
     private int m_CountOfComputer;
-    private Object m_nextObject;
+    private Element m_nextElement;
 
     public Computer getM_Computer() {
         return m_Computer;
@@ -15,12 +15,12 @@ public class Object {
         this.m_Computer = m_Computer;
     }
 
-    public Object getM_nextObject() {
-        return m_nextObject;
+    public Element getM_nextElement() {
+        return m_nextElement;
     }
 
-    public void setM_nextObject(Object m_nextObject) {
-        this.m_nextObject = m_nextObject;
+    public void setM_nextElement(Element m_nextElement) {
+        this.m_nextElement = m_nextElement;
     }
 
     public int getM_CountOfComputers() {
@@ -32,3 +32,4 @@ public class Object {
     }
 
 }
+

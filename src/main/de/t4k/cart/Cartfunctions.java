@@ -1,81 +1,75 @@
 package t4k.cart;
 
-import t4k.cart.Cart;
-import t4k.billing.Bill;
 import t4k.computer.Computer;
-import t4k.computer.Computerdetails;
-import t4k.computer.Manufacturer;
-import t4k.warehouse.Warehouse;
 
 public class Cartfunctions {
 
-    public static boolean addObjekt(Cart TheCart, Computer TheComputer, int number){
+    public static boolean addElement(Cart TheCart, Computer TheComputer, int number){ //Geht, getestet
         //Übergibt den Knoten von Warehouse des ersten PC
-        Object Anchor = TheCart.getM_firstObject();
+        Element Anchor = TheCart.getM_firstElement();
 
-        //Scroolt durch die Liste bis zum letzten PC
-        while (Anchor.getM_nextObject() != null){
-            Anchor = Anchor.getM_nextObject();
+        //Scroolt durch die Liste bis zum letzten Element
+        while (Anchor.getM_nextElement() != null){
+            Anchor = Anchor.getM_nextElement();
             if(Anchor.getM_Computer() == TheComputer){
                 return false; //False wenn PC schon in der Liste ist
             };
         }
         //Macht neuen PC und setzt nachfolger auf null
-        Object NewObject = new Object();
-        NewObject.setM_nextObject(null);
+        Element NewElement = new Element();
+        NewElement.setM_nextElement(null);
 
-        NewObject.setM_Computer(TheComputer);
-        NewObject.setM_CountOfComputers(number);
+        NewElement.setM_Computer(TheComputer);
+        NewElement.setM_CountOfComputers(number);
 
-        Anchor.setM_nextObject(NewObject);
+        TheCart.setM_ElementCount(TheCart.getM_ElementCount()+1);
+
+        Anchor.setM_nextElement(NewElement);
         return true;
     };
 
-    public static boolean delObjekt(Cart TheCart, int ItemID){ //NOCH NICHT FERTIG
-        Object Anchor = TheCart.getM_firstObject();
-        Object Placeholder = null;
-        Boolean isDeleted = false;
+    public static boolean delElement(Cart TheCart, int Element_Number){ //Geht, getestet
+        Element Anchor = TheCart.getM_firstElement();
+        Element Placeholder = TheCart.getM_firstElement();;
 
-        while (Anchor.getM_nextObject() != null){
-
-            if(Anchor.getM_nextObject().getM_Computer().getM_ItemId() == ItemID){
-                Placeholder = Anchor.getM_nextObject().getM_nextObject();
-                Anchor.setM_nextObject(Placeholder);
-                isDeleted = true;
-                System.out.println("Element Entfernt");
-                break;
-            }
-            Anchor = Anchor.getM_nextObject();
+        if(Element_Number > TheCart.getM_ElementCount() || Element_Number <= 0) {
+            return false; //Object nicht vorhanden
         }
 
-        if(!isDeleted){
-            System.out.println("Element nicht vorhanden");
+        for (int i = 0; i < Element_Number; ++i){
+            Placeholder = Anchor;
+            Anchor = Anchor.getM_nextElement();
         }
 
-        return isDeleted;
-    };
+        Placeholder.setM_nextElement(Anchor.getM_nextElement());
+        Anchor = null;
+        TheCart.setM_ElementCount(TheCart.getM_ElementCount()-1);
 
-    public static Object searchObjekt(Cart TheCart, int ItemID){ //Sucht nach itemID kann man aber auch leicht in was anderes ändern
-        Object Anchor = TheCart.getM_firstObject();
-        Object Placeholder = null;
+        return true;
+    }
+
+    public static Element searchElement(Cart TheCart, int ItemID){ //Sucht nach itemID kann man aber auch leicht in was anderes ändern //Geht, getestet
+        Element Anchor = TheCart.getM_firstElement();
+        Element Placeholder = null;
         Boolean isFound = false;
 
-        while (Anchor.getM_nextObject() != null){
+        while (Anchor.getM_nextElement() != null){
+            Anchor = Anchor.getM_nextElement();
 
             if(Anchor.getM_Computer().getM_ItemId() == ItemID){
                 Placeholder = Anchor;
                 isFound = true;
                 System.out.println("Element Gefunden");
-                break;
+                return Placeholder;
             }
-            Anchor = Anchor.getM_nextObject();
         }
 
-        if(!isFound){
-            System.out.println("Element nicht vorhanden");
+        if(!isFound){ //nö ist nicht immer true aber ok xD (habe getestet)
+            System.out.println("Element nicht Gefunden");
         }
 
-        return Placeholder;
+        return null;
+
     }
 
 

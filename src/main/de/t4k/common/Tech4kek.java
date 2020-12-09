@@ -2,6 +2,7 @@ package t4k.common;
 import t4k.computer.*;
 import t4k.warehouse.*;
 import static t4k.warehouse.WarehouseFunctions.*;
+import t4k.cart.*;
 //test
 
 
@@ -32,6 +33,36 @@ public class Tech4kek {
             Anchor = Anchor.getM_NextComputer();
             System.out.println(Anchor.getM_ComputerDetails().getM_Description());
         }
+
+        Computer PC1 = new Computer();
+        Computer PC2 = new Computer();
+        Computer PC3 = new Computer();
+
+        PC1.setM_ItemId(11);
+        PC2.setM_ItemId(22);
+        PC3.setM_ItemId(33);
+
+        Cart TheCart = new Cart();
+        Cartfunctions.addElement(TheCart, PC1, 20); //Anzahl der PCs die gekauft werden sollen
+        Cartfunctions.addElement(TheCart, PC2, 50);
+        Cartfunctions.addElement(TheCart, PC3, 10);
+
+        Cartfunctions.delElement(TheCart, 1);
+
+        Element AnchorCart = TheCart.getM_firstElement();
+        while (AnchorCart.getM_nextElement() != null) {
+            AnchorCart = AnchorCart.getM_nextElement();
+            System.out.println(AnchorCart.getM_CountOfComputers());
+        }
+
+        System.out.println(TheCart.getM_ElementCount());
+
+        Element ELSucherg = TheCart.getM_firstElement();
+
+       ELSucherg= Cartfunctions.searchElement(TheCart, 22);
+        System.out.println(ELSucherg.getM_Computer().getM_ItemId());
+
+
 
         Computer PC = new Computer();
         Person ThePerson = new Person();
