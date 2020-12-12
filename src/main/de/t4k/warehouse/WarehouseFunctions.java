@@ -1,5 +1,7 @@
 package t4k.warehouse;
 import t4k.computer.*;
+import t4k.cart.*;
+import t4k.computer.*;
 
 public class WarehouseFunctions {
     //Static damit man kein Objekt davon machen muss sondern einfach die Funktionen nutzen kann
@@ -77,4 +79,5 @@ public class WarehouseFunctions {
     {
         ThePC.setM_StockNumber(newStock);
     }
+
 }
