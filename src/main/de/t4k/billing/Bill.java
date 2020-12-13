@@ -6,12 +6,12 @@ import t4k.cart.Cart;
 
 public class Bill { //for creating the bill and save it in the DB
 
-    public Bill(Cart TheCart, Account TheAccount, int discount, int mwst){
+    public Bill(Cart TheCart, Account TheAccount, int discount, int TheTaxes){
         m_thisAccount = TheAccount;
         m_Order = TheCart;
         m_isPaid = false;
         m_Discount = discount;
-        m_Mwstr = mwst;
+        m_Taxes = TheTaxes;
         m_Price = calculate_Price();
         m_Billnumber = 0;
     }
@@ -24,10 +24,10 @@ public class Bill { //for creating the bill and save it in the DB
     private int m_Discount; // in Prozent
     private boolean m_isPaid;
     private double m_Price; // mit allen abzügen
-    private int m_Mwstr;
+    private int m_Taxes;
 
     public int getM_Mwstr() {
-        return m_Mwstr;
+        return m_Taxes;
     }
 
     public double getM_Price() {
@@ -65,7 +65,7 @@ public class Bill { //for creating the bill and save it in the DB
         m_Price = m_Price - zwierg;
         //mwst 16%
         zwierg = 0;
-        zwierg = m_Price /100 * m_Mwstr;
+        zwierg = m_Price /100 * m_Taxes;
         m_Price = m_Price + zwierg;
 
         return m_Price;
@@ -96,7 +96,7 @@ public class Bill { //for creating the bill and save it in the DB
         }
 
         System.out.print("Preis inklusive Mwstr von ");
-        System.out.print(m_Mwstr);
+        System.out.print(m_Taxes);
         System.out.print("% ");
         System.out.print("und ");
         System.out.print(m_Discount);

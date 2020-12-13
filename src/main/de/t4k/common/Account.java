@@ -1,11 +1,13 @@
 package t4k.common;
 import java.util.Scanner;
+import t4k.cart.Cart;
 
 public class Account {
     private AccountRole m_Role; //Die Gespeicherte Enum Variable
     private String m_EMail;
     private String m_Password;
     private Person m_ThePerson;
+    private Cart m_TheCart;
 
     //Functions
     public void ChangePW(Account ACC) {
@@ -70,6 +72,14 @@ public class Account {
 
     public Person GetPerson() {
         return m_ThePerson;
+    }
+
+    public void setM_TheCart(Cart TheCart){
+        m_TheCart = TheCart;
+    }
+
+    public Cart getM_TheCart(){
+        return m_TheCart;
     }
 
 }
