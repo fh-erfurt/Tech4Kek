@@ -13,12 +13,14 @@ public class Tech4kek {
     public static void main(String[] args) {
         System.out.println("Hello World");
 
-        //Anmeldefenster
+        //Anmelden Funktion, nimmt acc email und pw an und sucht eintrag in der DB und erstellt eine acc instanz für die person
 
-        //Daten werden anhand von email in DB gesucht und
-        //pw wird verglichen
+        // Es wir instanz für warehouse erstellt und da alle daten aus der produkt tabelle reingeladen in die verkettete liste
+        // Es wird instanz für card erstellt und da alle daten aus der produkt tabelle reingeladen in die verkettete liste
+        // Kunde kann liste durchgehen und Produkt und anzahl auswählen über funktion die liste durchscroolt und ausgibt
+        // Diese dinge werden Cart hinzugefügt
+        // Wenn Kunde fertig ist wird rechnung erstellt und in db gespeichert(als noch nicht bearbeitet) so wie ausgegeben an den Kunden
 
-        //Daten werden in Program geladen aus DB in Acc
 
         //Tests:
 
@@ -35,9 +37,10 @@ public class Tech4kek {
         System.out.println(TheACC.GetEMail());
 
         Warehouse TheWarehouse = new Warehouse();
-        addComputer(TheWarehouse, "ErsterPC", 1);
-        addComputer(TheWarehouse, "ZweiterPC", 2);
-        addComputer(TheWarehouse, "DritterPC", 3);
+        //in schleife werden alle einträge reingeladen
+        addComputer(TheWarehouse, "ErsterPC", 1, 10);
+        addComputer(TheWarehouse, "ZweiterPC", 2, 4);
+        addComputer(TheWarehouse, "DritterPC", 3, 8);
 
         delComputer(TheWarehouse, 1);
 
@@ -72,6 +75,10 @@ public class Tech4kek {
         PC2.setM_ComputerDetails(PC2Details);
         PC3.setM_ComputerDetails(PC3Details);
 
+        PC1.setM_StockNumber(4);
+        PC2.setM_StockNumber(5);
+        PC3.setM_StockNumber(8);
+
         Cart TheCart = new Cart();
         Cartfunctions.addElement(TheCart, PC1, 3); //Anzahl der PCs die gekauft werden sollen
         Cartfunctions.addElement(TheCart, PC2, 2);
@@ -85,7 +92,7 @@ public class Tech4kek {
             System.out.println(AnchorCart.getM_CountOfComputers());
         }
 
-        System.out.println(TheCart.getM_ElementCount());
+        //System.out.println(TheCart.getM_ElementCount());
 
         Element ELSucherg = TheCart.getM_firstElement();
 

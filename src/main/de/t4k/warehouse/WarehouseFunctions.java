@@ -5,7 +5,7 @@ import t4k.computer.*;
 
 public class WarehouseFunctions {
     //Static damit man kein Objekt davon machen muss sondern einfach die Funktionen nutzen kann
-    public static void addComputer(Warehouse TheWarehouse, String test, int id){ //Alle übergaben für zbs description fehlen noch
+    public static Computer addComputer(Warehouse TheWarehouse, String test, int id, int stocknumber){ //Alle übergaben für zbs description fehlen noch
         //Übergibt den Knoten von Warehouse des ersten PC
         Computer Anchor = TheWarehouse.getFirstComputer();
 
@@ -23,8 +23,10 @@ public class WarehouseFunctions {
         NewPC.setM_ComputerDetails(new Computerdetails());
         NewPC.getM_ComputerDetails().setM_Description(test);
         NewPC.setM_ItemId(id);
+        NewPC.setM_StockNumber(stocknumber);
 
         Anchor.setM_NextComputer(NewPC);
+        return NewPC;
     };
 
     public static boolean delComputer(Warehouse TheWarehouse, int ID){ //NOCH NICHT FERTIG
@@ -51,7 +53,7 @@ public class WarehouseFunctions {
     return isDeleted;
     };
 
-    public static Computer searchComputer(Warehouse TheWarehouse, int id){ //Sucht nach itemID kann man aber auch leicht in was anderes ändern
+    public static Computer searchComputer(Warehouse TheWarehouse, int id){ //Sucht nach itemID kann man aber auch leicht in was anderes ändern bzw unterschiedliche machen
         Computer Anchor = TheWarehouse.getFirstComputer();
         Computer Placeholder = null;
         Boolean isFound = false;

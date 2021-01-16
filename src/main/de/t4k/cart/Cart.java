@@ -11,7 +11,7 @@ public class Cart {
         m_ElementCount = 0;
     }
 
-    private int m_ElementCount; //anzahl der Objekte, Anker ist objekt 0
+    private int m_ElementCount; //anzahl der Elemente, Anker ist Element 0
     private Element m_firstElement;
 
     public Element getM_firstElement() {

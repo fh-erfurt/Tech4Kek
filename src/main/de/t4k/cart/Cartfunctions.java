@@ -4,9 +4,15 @@ import t4k.computer.Computer;
 
 public class Cartfunctions {
 
-    public static boolean addElement(Cart TheCart, Computer TheComputer, int number){ //Geht, getestet
+    public static boolean addElement(Cart TheCart, Computer TheComputer, int number) { //Geht, getestet
         //Übergibt den Knoten von Warehouse des ersten PC
         Element Anchor = TheCart.getM_firstElement();
+
+        if (TheComputer.getM_StockNumber() < number)
+        {
+            System.out.println("Zu wenig Systeme vorhanden");
+            return false;
+        }
 
         //Scroolt durch die Liste bis zum letzten Element
         while (Anchor.getM_nextElement() != null){
@@ -18,6 +24,7 @@ public class Cartfunctions {
         //Macht neuen PC und setzt nachfolger auf null
         Element NewElement = new Element();
         NewElement.setM_nextElement(null);
+        TheComputer.setM_StockNumber(TheComputer.getM_StockNumber()-number);
 
         NewElement.setM_Computer(TheComputer);
         NewElement.setM_CountOfComputers(number);
@@ -33,7 +40,8 @@ public class Cartfunctions {
         Element Placeholder = TheCart.getM_firstElement();;
 
         if(Element_Number > TheCart.getM_ElementCount() || Element_Number <= 0) {
-            return false; //Object nicht vorhanden
+            System.out.println("Element nicht vorhanden");
+            return false; //Element nicht vorhanden
         }
 
         for (int i = 0; i < Element_Number; ++i){
@@ -42,6 +50,7 @@ public class Cartfunctions {
         }
 
         Placeholder.setM_nextElement(Anchor.getM_nextElement());
+
         Anchor = null;
         TheCart.setM_ElementCount(TheCart.getM_ElementCount()-1);
 
