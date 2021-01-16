@@ -50,7 +50,7 @@ public class Cartfunctions {
         }
 
         Placeholder.setM_nextElement(Anchor.getM_nextElement());
-
+        Anchor.getM_Computer().setM_StockNumber(Anchor.getM_Computer().getM_StockNumber() + Anchor.getM_CountOfComputers());
         Anchor = null;
         TheCart.setM_ElementCount(TheCart.getM_ElementCount()-1);
 

@@ -84,7 +84,11 @@ public class Tech4kek {
         Cartfunctions.addElement(TheCart, PC2, 2);
         Cartfunctions.addElement(TheCart, PC3, 5);
 
+        System.out.println("pc hat so viele elemente im stock:");
+        System.out.println(PC1.getM_StockNumber());
         Cartfunctions.delElement(TheCart, 1);
+        System.out.println("pc hat so viele elemente im stock:");
+        System.out.println(PC1.getM_StockNumber()); //funktioniert
 
         Element AnchorCart = TheCart.getM_firstElement();
         while (AnchorCart.getM_nextElement() != null) {
