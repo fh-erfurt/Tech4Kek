@@ -71,10 +71,6 @@ public class Bill { //for creating the bill and save it in the DB
         return m_Price;
     }
 
-    public double calculate_Discount(){
-
-        return m_Price;
-    }
 
     public int print_Bill(){
         Element Anchor = m_Order.getM_firstElement();

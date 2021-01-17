@@ -73,7 +73,7 @@ public class Cartfunctions {
             }
         }
 
-        if(!isFound){ //nö ist nicht immer true aber ok xD (habe getestet)
+        if(!isFound){
             System.out.println("Element nicht Gefunden");
         }
 

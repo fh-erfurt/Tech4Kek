@@ -1,11 +1,13 @@
 package t4k.warehouse;
+import t4k.common.Address;
 import t4k.computer.*;
 import t4k.cart.*;
 import t4k.computer.*;
 
 public class WarehouseFunctions {
     //Static damit man kein Objekt davon machen muss sondern einfach die Funktionen nutzen kann
-    public static Computer addComputer(Warehouse TheWarehouse, String test, int id, int stocknumber){ //Alle übergaben für zbs description fehlen noch
+    public static Computer addComputer(Warehouse TheWarehouse ,String description, int itemid, int stocknumber, String detailname, double price, double cpuclock, int cpucoreamount, String cpuname,
+                                       int threadcount, String gpuname, double gpuclock, String ramname, int ramsize, int vramamount, String manPhoneNum, String agent, String agentName, int zip, String street, String houseNr, String country, String city){
         //Übergibt den Knoten von Warehouse des ersten PC
         Computer Anchor = TheWarehouse.getFirstComputer();
 
@@ -20,10 +22,33 @@ public class WarehouseFunctions {
 
         //Füllt alle Details (muss noch fertig gemacht werden...)
         NewPC.setM_ManufacturerOfComputer(new Manufacturer());
+        NewPC.getM_ManufacturerOfComputer().setM_AddressOfMan(new Address());
         NewPC.setM_ComputerDetails(new Computerdetails());
-        NewPC.getM_ComputerDetails().setM_Description(test);
-        NewPC.setM_ItemId(id);
+        NewPC.setM_ItemId(itemid);
         NewPC.setM_StockNumber(stocknumber);
+
+        NewPC.getM_ManufacturerOfComputer().setM_ManPhoneNumber(manPhoneNum);
+        NewPC.getM_ManufacturerOfComputer().setM_Agent(agent);
+        NewPC.getM_ManufacturerOfComputer().setM_ManName(agentName);
+
+        NewPC.getM_ManufacturerOfComputer().getM_AddressOfMan().setM_ZIP(zip);
+        NewPC.getM_ManufacturerOfComputer().getM_AddressOfMan().setM_Street(street);
+        NewPC.getM_ManufacturerOfComputer().getM_AddressOfMan().setM_HouseNr(houseNr);
+        NewPC.getM_ManufacturerOfComputer().getM_AddressOfMan().setM_Country(country);
+        NewPC.getM_ManufacturerOfComputer().getM_AddressOfMan().setM_City(city);
+
+        NewPC.getM_ComputerDetails().setM_Price(price);
+        NewPC.getM_ComputerDetails().setM_DetailName(detailname);
+        NewPC.getM_ComputerDetails().setM_Description(description);
+        NewPC.getM_ComputerDetails().setM_CpuClock(cpuclock);
+        NewPC.getM_ComputerDetails().setM_CpuCoreAmount(cpucoreamount);
+        NewPC.getM_ComputerDetails().setM_CpuName(cpuname);
+        NewPC.getM_ComputerDetails().setM_CpuThreadAmount(threadcount);
+        NewPC.getM_ComputerDetails().setM_Gpu(gpuname);
+        NewPC.getM_ComputerDetails().setM_GpuClock(gpuclock);
+        NewPC.getM_ComputerDetails().setM_Ram(ramname);
+        NewPC.getM_ComputerDetails().setM_RamSize(ramsize);
+        NewPC.getM_ComputerDetails().setM_VramAmount(vramamount);
 
         Anchor.setM_NextComputer(NewPC);
         return NewPC;
