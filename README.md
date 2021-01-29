@@ -41,7 +41,7 @@ Für das Modul Java 1 wird vorerst jedoch nur das Grundsystem umgesetzt und impl
 
 
 
-##Muss-Kriterien
+## Muss-Kriterien
 
   <details>
   <summary>Verwaltung von Accounts</summary>
@@ -75,7 +75,7 @@ Für das Modul Java 1 wird vorerst jedoch nur das Grundsystem umgesetzt und impl
 </details>
 
 
-##Wunsch-Kriterien
+## Wunsch-Kriterien
 
 * ALLE ERFÜLLT!
 
@@ -87,7 +87,7 @@ Für das Modul Java 1 wird vorerst jedoch nur das Grundsystem umgesetzt und impl
 
 
 
-##Abgrenzungskriterien
+## Abgrenzungskriterien
 Nicht realisiert werden, sollen: <br>
 - Ein Lagersystem mit Fachnummern, unser System hat keine Lagerverwaltung <br>
 
@@ -108,7 +108,7 @@ Nicht realisiert werden, sollen: <br>
 
 
 
-##Diagramme
+## Diagramme
 
 
 <details>
