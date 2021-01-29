@@ -38,9 +38,6 @@ public class Tech4kek {
 
         Warehouse TheWarehouse = new Warehouse();
         //in schleife werden alle einträge reingeladen
-        addComputer(TheWarehouse, "ErsterPC", 1, 10);
-        addComputer(TheWarehouse, "ZweiterPC", 2, 4);
-        addComputer(TheWarehouse, "DritterPC", 3, 8);
 
         delComputer(TheWarehouse, 1);
 
