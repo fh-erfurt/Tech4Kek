@@ -6,10 +6,9 @@ import t4k.common.Address;
 import t4k.computer.Computer;
 import t4k.computer.Manufacturer;
 
-import org.junit.Assert;
-import org.junit.Test;
-
 import static org.junit.Assert.*;
+
+
 
 public class WarehouseFunctionsTest {
 
