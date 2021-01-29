@@ -123,35 +123,35 @@ Nicht realisiert werden, sollen: <br>
 <summary> Kunde anlegen</summary>
 <br>
 
-![alt text](https://github.com/fh-erfurt/Tech4Kek/blob/main/UML/Kunde anlegen.jpg)
+![alt text](https://github.com/fh-erfurt/Tech4Kek/blob/main/UML/Kunde%20anlegen.png?raw=true)
 </details>
 
 <details>
 <summary> Bestellung aufgeben</summary>
 <br>
 
-![alt text](https://github.com/fh-erfurt/Tech4Kek/blob/main/UML/Bestellung aufgeben.jpg)
+![alt text](https://github.com/fh-erfurt/Tech4Kek/blob/main/UML/Bestellung%20aufgeben.png?raw=true)
 </details>
 
 <details>
 <summary> PC hinzufügen</summary>
 <br>
 
-![alt text](https://github.com/fh-erfurt/Tech4Kek/blob/main/UML/PC hinzufügen.jpg)
+![alt text](https://github.com/fh-erfurt/Tech4Kek/blob/main/UML/PC%20hinzuf%C3%BCgen.png?raw=true)
 </details>
 
 <details>
 <summary> PC verwalten</summary>
 <br>
 
-![alt text](https://github.com/fh-erfurt/Tech4Kek/blob/main/UML/PC verwalten.jpg)
+![alt text](https://github.com/fh-erfurt/Tech4Kek/blob/main/UML/PC%20verwalten.png?raw=true)
 </details>
 
 <details>
 <summary> Verwaltung der Kunden</summary>
 <br>
 
-![alt text](https://github.com/fh-erfurt/Tech4Kek/blob/main/UML/Verwaltung der Kunden.jpg)
+![alt text](https://github.com/fh-erfurt/Tech4Kek/blob/main/UML/Verwaltung%20der%20Kunden.png?raw=true)
 </details>
 
 ## Lessons Learned
