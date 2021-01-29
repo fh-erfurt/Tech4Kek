@@ -102,9 +102,4 @@ public class WarehouseFunctions {
 
     }
 
-    public static void changeStockNumber(int newStock, Computer ThePC) //Glaube die ist unnötig
-    {
-        ThePC.setM_StockNumber(newStock);
-    }
-
 }
