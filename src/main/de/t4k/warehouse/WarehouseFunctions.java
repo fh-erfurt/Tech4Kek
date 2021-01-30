@@ -1,8 +1,8 @@
 package t4k.warehouse;
 import t4k.common.Address;
 import t4k.computer.*;
-import t4k.cart.*;
-import t4k.computer.*;
+
+
 
 public class WarehouseFunctions {
     //Static damit man kein Objekt davon machen muss sondern einfach die Funktionen nutzen kann
@@ -20,7 +20,7 @@ public class WarehouseFunctions {
         Computer NewPC = new Computer();
         NewPC.setM_NextComputer(null);
 
-        //Füllt alle Details (muss noch fertig gemacht werden...)
+        //Füllt alle Details
         NewPC.setM_ManufacturerOfComputer(new Manufacturer());
         NewPC.getM_ManufacturerOfComputer().setM_AddressOfMan(new Address());
         NewPC.setM_ComputerDetails(new Computerdetails());
@@ -54,52 +54,48 @@ public class WarehouseFunctions {
         return NewPC;
     };
 
-    public static boolean delComputer(Warehouse TheWarehouse, int ID){ //NOCH NICHT FERTIG
+    public static Computer delComputer(Warehouse TheWarehouse, int ID){ //NOCH NICHT FERTIG
         Computer Anchor = TheWarehouse.getFirstComputer();
         Computer Placeholder = null;
-        Boolean isDeleted = false;
+        Computer isDeleted = null;
 
         while (Anchor.getM_NextComputer() != null){
 
             if(Anchor.getM_NextComputer().getM_ItemId() == ID){
+                isDeleted = Anchor.getM_NextComputer();
                 Placeholder = Anchor.getM_NextComputer().getM_NextComputer();
                 Anchor.setM_NextComputer(Placeholder);
-                isDeleted = true;
                 System.out.println("Element Entfernt");
                 break;
             }
             Anchor = Anchor.getM_NextComputer();
         }
 
-        if(!isDeleted){
+        if(isDeleted == null){
             System.out.println("Element nicht vorhanden");
         }
 
     return isDeleted;
     };
 
-    public static Computer searchComputer(Warehouse TheWarehouse, int id){ //Sucht nach itemID kann man aber auch leicht in was anderes ändern bzw unterschiedliche machen
+    public static Computer searchComputer(Warehouse TheWarehouse, int id){ //Sucht nach itemID kann man aber auch leicht in was anderes ändern
         Computer Anchor = TheWarehouse.getFirstComputer();
         Computer Placeholder = null;
-        Boolean isFound = false;
 
         while (Anchor.getM_NextComputer() != null){
 
             if(Anchor.getM_ItemId() == id){
                 Placeholder = Anchor;
-                isFound = true;
                 System.out.println("Element Gefunden");
                 break;
             }
             Anchor = Anchor.getM_NextComputer();
         }
 
-        if(!isFound){
+        if(Placeholder == null){
             System.out.println("Element nicht vorhanden");
         }
 
         return Placeholder;
-
     }
-
 }
