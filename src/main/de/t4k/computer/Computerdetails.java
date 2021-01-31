@@ -11,7 +11,7 @@ public class Computerdetails{
     private String m_Gpu;
     private int m_VramAmount;
     private double m_GpuClock;
-    private String m_Ramname;
+    private String m_RamName;
     private int m_RamSize;
 
     public String getM_Description() {
@@ -94,12 +94,12 @@ public class Computerdetails{
         this.m_GpuClock = m_GpuClock;
     }
 
-    public String getM_Ramname() {
-        return m_Ramname;
+    public String getM_RamName() {
+        return m_RamName;
     }
 
     public void setM_Ram(String m_Ram) {
-        this.m_Ramname = m_Ram;
+        this.m_RamName = m_Ram;
     }
 
     public int getM_RamSize() {

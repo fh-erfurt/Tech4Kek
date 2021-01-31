@@ -4,8 +4,8 @@ import t4k.computer.Computer;
 
 public class Cartfunctions {
 
-    public static Element addElement(Cart TheCart, Computer TheComputer, int number) { //Geht, getestet
-        //Übergibt den Knoten von Warehouse des ersten PC
+    public static Element addElement(Cart TheCart, Computer TheComputer, int number) {
+        //gives anchor node
         Element Anchor = TheCart.getM_firstElement();
 
         if (TheComputer.getM_StockNumber() < number)
@@ -14,14 +14,14 @@ public class Cartfunctions {
             return null;
         }
 
-        //Scroolt durch die Liste bis zum letzten Element
+        //moves trough all elements
         while (Anchor.getM_nextElement() != null){
             Anchor = Anchor.getM_nextElement();
             if(Anchor.getM_Computer() == TheComputer){
-                return null; //False wenn PC schon in der Liste ist
+                return null; //false if pc is already existing
             };
         }
-        //Macht neuen PC und setzt nachfolger auf null
+        //creates new pc and sets successor null
         Element NewElement = new Element();
         NewElement.setM_nextElement(null);
         TheComputer.setM_StockNumber(TheComputer.getM_StockNumber()-number);
@@ -35,13 +35,13 @@ public class Cartfunctions {
         return NewElement;
     };
 
-    public static boolean delElement(Cart TheCart, int Element_Number){ //Geht, getestet
+    public static boolean delElement(Cart TheCart, int Element_Number){
         Element Anchor = TheCart.getM_firstElement();
         Element Placeholder = TheCart.getM_firstElement();;
 
         if(Element_Number > TheCart.getM_ElementCount() || Element_Number <= 0) {
             System.out.println("Element nicht vorhanden");
-            return false; //Element nicht vorhanden
+            return false; //element is not existing
         }
 
         for (int i = 0; i < Element_Number; ++i){
@@ -57,7 +57,7 @@ public class Cartfunctions {
         return true;
     }
 
-    public static Element searchElement(Cart TheCart, int ItemID){ //Sucht nach itemID kann man aber auch leicht in was anderes ändern //Geht, getestet
+    public static Element searchElement(Cart TheCart, int ItemID){ //search for ItemID
         Element Anchor = TheCart.getM_firstElement();
         Element Placeholder = null;
         Boolean isFound = false;

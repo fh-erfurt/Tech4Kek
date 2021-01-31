@@ -3,7 +3,7 @@ import java.util.Scanner;
 import t4k.cart.Cart;
 
 public class Account {
-    private AccountRole m_Role; //Die Gespeicherte Enum Variable
+    private AccountRole m_Role; //role ENUM
     private String m_EMail;
     private String m_Password;
     private Person m_ThePerson;
@@ -37,7 +37,7 @@ public class Account {
                 System.out.println("Passwörter stimmen nicht überein");
             }
         }while(neuPW != helper);
-        ACC.SetPassword(neuPW); //or change it in the DB in the future
+        ACC.SetPassword(neuPW); //set new password
         System.out.println("Passwort wurde geändert");
     }
 

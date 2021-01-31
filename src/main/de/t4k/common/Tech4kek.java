@@ -11,16 +11,15 @@ import t4k.billing.*;
 public class Tech4kek {
 
     public static void main(String[] args) {
-        System.out.println("Hello World");
 
-        //Anmelden Funktion, nimmt acc email und pw an und sucht eintrag in der DB und erstellt eine acc instanz für die person
+        //future functions
 
-        // Es wir instanz für warehouse erstellt und da alle daten aus der produkt tabelle reingeladen in die verkettete liste
-        // Es wird instanz für card erstellt und da alle daten aus der produkt tabelle reingeladen in die verkettete liste
-        // Kunde kann liste durchgehen und Produkt und anzahl auswählen über funktion die liste durchscroolt und ausgibt
-        // Diese dinge werden Cart hinzugefügt
-        // Wenn Kunde fertig ist wird rechnung erstellt und in db gespeichert(als noch nicht bearbeitet) so wie ausgegeben an den Kunden
-
+            //login checks email and password and creates instance for the user
+            //creates warehouse instance and inserts product data in the linked list
+            //creates cart instance and inserts product data into the linked list
+            //user can scroll trough list and select product and count
+            //adds selection to cart
+            //creates bill and saves it in the DB also prints it for the user
 
         //Tests:
 
@@ -37,11 +36,11 @@ public class Tech4kek {
         System.out.println(TheACC.GetEMail());
 
         Warehouse TheWarehouse = new Warehouse();
-        //in schleife werden alle einträge reingeladen
+        //load all entries
 
         delComputer(TheWarehouse, 1);
 
-        //Funktion zum Printen der Computer als test
+        //computer print function
         Computer Anchor = TheWarehouse.getFirstComputer();
         while (Anchor.getM_NextComputer() != null) {
             Anchor = Anchor.getM_NextComputer();
@@ -77,7 +76,7 @@ public class Tech4kek {
         PC3.setM_StockNumber(8);
 
         Cart TheCart = new Cart();
-        Cartfunctions.addElement(TheCart, PC1, 3); //Anzahl der PCs die gekauft werden sollen
+        Cartfunctions.addElement(TheCart, PC1, 3); //number of pc´s
         Cartfunctions.addElement(TheCart, PC2, 2);
         Cartfunctions.addElement(TheCart, PC3, 5);
 
@@ -85,7 +84,7 @@ public class Tech4kek {
         System.out.println(PC1.getM_StockNumber());
         Cartfunctions.delElement(TheCart, 1);
         System.out.println("pc hat so viele elemente im stock:");
-        System.out.println(PC1.getM_StockNumber()); //funktioniert
+        System.out.println(PC1.getM_StockNumber());
 
         Element AnchorCart = TheCart.getM_firstElement();
         while (AnchorCart.getM_nextElement() != null) {

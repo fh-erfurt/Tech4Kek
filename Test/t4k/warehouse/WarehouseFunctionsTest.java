@@ -1,9 +1,6 @@
 package t4k.warehouse;
 
 import org.junit.jupiter.api.Test;
-import t4k.cart.Cart;
-import t4k.cart.Cartfunctions;
-import t4k.cart.Element;
 import t4k.common.Address;
 import t4k.computer.Computer;
 import t4k.computer.Computerdetails;
@@ -58,7 +55,7 @@ class WarehouseFunctionsTest {
 
         //Call function
         ErgPC = WarehouseFunctions.addComputer(WarehouseTest, TestDetails.getM_Description(), TestPC.getM_ItemId(), TestPC.getM_StockNumber(), TestDetails.getM_DetailName(), TestDetails.getM_Price(), TestDetails.getM_CpuClock(), TestDetails.getM_CpuCoreAmount(),
-                TestDetails.getM_CpuName(), TestDetails.getM_CpuThreadAmount(), TestDetails.getM_Gpu(), TestDetails.getM_GpuClock(), TestDetails.getM_Ramname(), TestDetails.getM_RamSize(), TestDetails.getM_VramAmount(), ManufacturerTest.getM_ManPhoneNumber(),
+                TestDetails.getM_CpuName(), TestDetails.getM_CpuThreadAmount(), TestDetails.getM_Gpu(), TestDetails.getM_GpuClock(), TestDetails.getM_RamName(), TestDetails.getM_RamSize(), TestDetails.getM_VramAmount(), ManufacturerTest.getM_ManPhoneNumber(),
                 ManufacturerTest.getM_Agent(), ManufacturerTest.getM_ManName(), AddressTest.getM_ZIP(), AddressTest.getM_Street(), AddressTest.getM_HouseNr(), AddressTest.getM_Country(), AddressTest.getM_City());
 
         //Compare values

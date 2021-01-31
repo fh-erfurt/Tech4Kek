@@ -5,22 +5,22 @@ import t4k.computer.*;
 
 
 public class WarehouseFunctions {
-    //Static damit man kein Objekt davon machen muss sondern einfach die Funktionen nutzen kann
+    //static so you can use the function, without creating an object
     public static Computer addComputer(Warehouse TheWarehouse ,String description, int itemid, int stocknumber, String detailname, double price, double cpuclock, int cpucoreamount, String cpuname,
                                        int threadcount, String gpuname, double gpuclock, String ramname, int ramsize, int vramamount, String manPhoneNum, String agent, String agentName, int zip, String street, String houseNr, String country, String city){
-        //Übergibt den Knoten von Warehouse des ersten PC
+        //transfers node of the first computer from warehouse
         Computer Anchor = TheWarehouse.getFirstComputer();
 
-        //Scroolt durch die Liste bis zum letzten PC
+        //moves trough all elements
         while (Anchor.getM_NextComputer() != null){
             Anchor = Anchor.getM_NextComputer();
         }
 
-        //Macht neuen PC und setzt nachfolger auf null
+        //creates new pc and sets successor null
         Computer NewPC = new Computer();
         NewPC.setM_NextComputer(null);
 
-        //Füllt alle Details
+        //insert details
         NewPC.setM_ManufacturerOfComputer(new Manufacturer());
         NewPC.getM_ManufacturerOfComputer().setM_AddressOfMan(new Address());
         NewPC.setM_ComputerDetails(new Computerdetails());
@@ -54,7 +54,7 @@ public class WarehouseFunctions {
         return NewPC;
     };
 
-    public static Computer delComputer(Warehouse TheWarehouse, int ID){ //NOCH NICHT FERTIG
+    public static Computer delComputer(Warehouse TheWarehouse, int ID){
         Computer Anchor = TheWarehouse.getFirstComputer();
         Computer Placeholder = null;
         Computer isDeleted = null;
@@ -78,7 +78,7 @@ public class WarehouseFunctions {
     return isDeleted;
     };
 
-    public static Computer searchComputer(Warehouse TheWarehouse, int id){ //Sucht nach itemID kann man aber auch leicht in was anderes ändern
+    public static Computer searchComputer(Warehouse TheWarehouse, int id){  //search for id
         Computer Anchor = TheWarehouse.getFirstComputer();
         Computer Placeholder = null;
 
