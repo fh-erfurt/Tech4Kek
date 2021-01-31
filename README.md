@@ -20,14 +20,13 @@ Für das Modul <b>Java 1</b> entwickeln wir in unserem Team eine Java-Applikatio
 
 * [IntelliJ](https://www.jetbrains.com/de-de/idea/download/other.html) - IDE für JAVA
 * [lucidchart](https://www.lucidchart.com) - Tool für die Erstellung der Diagramme
+* [StarUML](https://staruml.io/) - weiteres Tool für Diagramme
 * [Office](https://www.office.com/) - Office Programm
+* [Google Drive/Docs](https://drive.google.com/drive/) - gemeinsames Arbeiten and Präsentationen, Datenaustausch
 * [Git](https://git-scm.com/) - Versionskontrolle
 * [Discord](https://discord.com/) - Kommunikationsmittel
 * [Telegram](https://telegram.org) - Kommunikationsmittel
 </details>
-
-
-
 
 ## Zielbestimmungen
 Die Firma „Tech4Kek“ ist ein Online-Großhändler für ausgewählte Computerhardware mit Firmensitz in Erfurt. Nun Soll unser Verwaltunssystem für den Verkauf von Fertig Computern entwickelt werden. 
@@ -38,8 +37,6 @@ Das System soll in mehreren Etappen entwickelt werden: <br>
 - Webfrontend <br>
 
 Für das Modul Java 1 wird vorerst jedoch nur das Grundsystem umgesetzt und implementiert.
-
-
 
 ## Muss-Kriterien
 
@@ -80,32 +77,9 @@ Für das Modul Java 1 wird vorerst jedoch nur das Grundsystem umgesetzt und impl
 * ALLE ERFÜLLT!
 
 
-
-
-
-
-
-
-
 ## Abgrenzungskriterien
 Nicht realisiert werden, sollen: <br>
 - Ein Lagersystem mit Fachnummern, unser System hat keine Lagerverwaltung <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ## Diagramme
