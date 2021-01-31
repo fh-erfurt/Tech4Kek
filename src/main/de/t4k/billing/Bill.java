@@ -4,7 +4,7 @@ import t4k.cart.Element;
 import t4k.common.Account;
 import t4k.cart.Cart;
 
-public class Bill { //creates a bill and inserts into DB
+public class Bill { //for creating the bill and save it in the DB
 
     public Bill(Cart TheCart, Account TheAccount, int discount, int TheTaxes){
         m_thisAccount = TheAccount;
@@ -17,13 +17,13 @@ public class Bill { //creates a bill and inserts into DB
     }
 
 
-    private int m_Billnumber; //taken from DB
+    private int m_Billnumber; //letzte muss aus db gezogen werden
     private Account m_thisAccount;
     private Cart m_Order;
     //private Date m_thisDate;
-    private int m_Discount; //in percent
+    private int m_Discount; // in Prozent
     private boolean m_isPaid;
-    private double m_Price; //final price
+    private double m_Price; // mit allen abzügen
     private int m_Taxes;
 
     public int getM_Mwstr() {
@@ -51,19 +51,19 @@ public class Bill { //creates a bill and inserts into DB
     }
 
 
-    public double calculate_Price(){
+    public double calculate_Price(){ //Geht, getestet
         Element Anchor = m_Order.getM_firstElement();
-        //sums up the price of all elements
+        //Scroolt durch die Liste bis zum letzten PC und rechnet preise zusammen
         while (Anchor.getM_nextElement() != null){
             Anchor = Anchor.getM_nextElement();
             m_Price = m_Price + (Anchor.getM_CountOfComputers() * Anchor.getM_Computer().getM_ComputerDetails().getM_Price());
         }
 
-        //adds discount
+        // discount abziehen
         double zwierg = 0;
         zwierg = m_Price /100 * m_Discount;
         m_Price = m_Price - zwierg;
-        //tax 16%
+        //mwst 16%
         zwierg = 0;
         zwierg = m_Price /100 * m_Taxes;
         m_Price = m_Price + zwierg;
@@ -77,7 +77,7 @@ public class Bill { //creates a bill and inserts into DB
         System.out.println("Vielen Dank für Ihren Einkauf bei Techkek");
         System.out.println("Sie haben folgende Produkte gekauft:");
 
-        //moves trough all elements and prints bill
+        //Scroolt durch die Liste bis zum letzten PC und gibt daten aus
         while (Anchor.getM_nextElement() != null){
             Anchor = Anchor.getM_nextElement();
 
@@ -103,7 +103,7 @@ public class Bill { //creates a bill and inserts into DB
     }
 
     public int save_Bill(){
-        //save bill into DB
+        //save Bill somehow in db
         return m_Billnumber;
     }
 }

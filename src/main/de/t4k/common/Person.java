@@ -6,7 +6,7 @@ public class Person {
     private String m_Lastname;
     private String m_Firstname;
     private LocalDateTime m_Birthday;
-    private Address TheAddress;
+    private Address m_TheAddress;
 
     //Set/Get Functions
 
@@ -22,8 +22,8 @@ public class Person {
         this.m_Birthday = m_Birthday;
     }
 
-    public void setTheAddress(Address theAddress) {
-        TheAddress = theAddress;
+    public void setM_TheAddress(Address m_TheAddress) {
+        this.m_TheAddress = m_TheAddress;
     }
 
     public String getM_Lastname() {
@@ -38,7 +38,7 @@ public class Person {
         return m_Birthday;
     }
 
-    public Address getTheAddress() {
-        return TheAddress;
+    public Address getM_TheAddress() {
+        return m_TheAddress;
     }
 }

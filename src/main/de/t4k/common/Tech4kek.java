@@ -31,7 +31,7 @@ public class Tech4kek {
         TheACC.SetRole(AccountRole.Customer);
         //Set Person Data from DB
         TheACC.SetPerson(ThePerson);
-        TheACC.GetPerson().setM_firstname("Arnold");
+        TheACC.GetPerson().setM_Firstname("Arnold");
 
         System.out.println(TheACC.GetEMail());
 
