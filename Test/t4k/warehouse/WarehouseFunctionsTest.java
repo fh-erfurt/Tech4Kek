@@ -70,7 +70,7 @@ class WarehouseFunctionsTest {
         assertEquals(TestPC.getM_ComputerDetails().getM_CpuThreadAmount(), ErgPC.getM_ComputerDetails().getM_CpuThreadAmount());
         assertEquals(TestPC.getM_ComputerDetails().getM_Gpu(), ErgPC.getM_ComputerDetails().getM_Gpu());
         assertEquals(TestPC.getM_ComputerDetails().getM_GpuClock(), ErgPC.getM_ComputerDetails().getM_GpuClock());
-        assertEquals(TestPC.getM_ComputerDetails().getM_Ramname(), ErgPC.getM_ComputerDetails().getM_Ramname());
+        assertEquals(TestPC.getM_ComputerDetails().getM_RamName(), ErgPC.getM_ComputerDetails().getM_RamName());
         assertEquals(TestPC.getM_ComputerDetails().getM_RamSize(), ErgPC.getM_ComputerDetails().getM_RamSize());
         assertEquals(TestPC.getM_ComputerDetails().getM_VramAmount(), ErgPC.getM_ComputerDetails().getM_VramAmount());
         assertEquals(TestPC.getM_ManufacturerOfComputer().getM_ManPhoneNumber(), ErgPC.getM_ManufacturerOfComputer().getM_ManPhoneNumber());
