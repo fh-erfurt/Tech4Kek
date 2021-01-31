@@ -3,19 +3,19 @@ package t4k.common;
 import java.time.LocalDateTime;
 
 public class Person {
-    private String m_lastname;
-    private String m_firstname;
+    private String m_Lastname;
+    private String m_Firstname;
     private LocalDateTime m_Birthday;
     private Address TheAddress;
 
     //Set/Get Functions
 
-    public void setM_lastname(String m_lastname) {
-        this.m_lastname = m_lastname;
+    public void setM_Lastname(String m_Lastname) {
+        this.m_Lastname = m_Lastname;
     }
 
-    public void setM_firstname(String m_firstname) {
-        this.m_firstname = m_firstname;
+    public void setM_Firstname(String m_Firstname) {
+        this.m_Firstname = m_Firstname;
     }
 
     public void setM_Birthday(LocalDateTime m_Birthday) {
@@ -26,12 +26,12 @@ public class Person {
         TheAddress = theAddress;
     }
 
-    public String getM_lastname() {
-        return m_lastname;
+    public String getM_Lastname() {
+        return m_Lastname;
     }
 
-    public String getM_firstname() {
-        return m_firstname;
+    public String getM_Firstname() {
+        return m_Firstname;
     }
 
     public LocalDateTime getM_Birthday() {
