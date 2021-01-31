@@ -130,7 +130,7 @@ Nicht realisiert werden, sollen: <br>
 <summary> Bestellung aufgeben</summary>
 <br>
 
-![alt text](https://github.com/fh-erfurt/Tech4Kek/blob/main/UML/Bestellung%20aufgeben.png?raw=true)
+![alt text](https://github.com/fh-erfurt/Tech4Kek/blob/425feebe83170e88733e096bc6b95626255d9c63/UML/Bestellung%20aufgeben.png)
 </details>
 
 <details>
