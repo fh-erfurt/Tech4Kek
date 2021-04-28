@@ -1,4 +1,4 @@
-package t4k.common;
+package main.de.t4k.common;
 
 public class Address {
     private String m_Street;

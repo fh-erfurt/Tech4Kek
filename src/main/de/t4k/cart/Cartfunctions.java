@@ -1,6 +1,6 @@
-package t4k.cart;
+package main.de.t4k.cart;
 
-import t4k.computer.Computer;
+import main.de.t4k.computer.Computer;
 
 public class Cartfunctions {
 

@@ -1,4 +1,4 @@
-package t4k.cart;
+package main.de.t4k.cart;
 
 public class Cart {
 

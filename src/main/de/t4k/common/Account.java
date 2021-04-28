@@ -1,6 +1,6 @@
-package t4k.common;
+package main.de.t4k.common;
 import java.util.Scanner;
-import t4k.cart.Cart;
+import main.de.t4k.cart.Cart;
 
 public class Account {
     private AccountRole m_Role; //Die Gespeicherte Enum Variable

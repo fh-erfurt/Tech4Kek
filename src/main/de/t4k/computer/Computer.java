@@ -1,4 +1,4 @@
-package t4k.computer;
+package main.de.t4k.computer;
 
 public class Computer {
     private int m_ItemId;

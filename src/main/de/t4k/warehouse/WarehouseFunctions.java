@@ -1,6 +1,6 @@
-package t4k.warehouse;
-import t4k.common.Address;
-import t4k.computer.*;
+package main.de.t4k.warehouse;
+import main.de.t4k.common.Address;
+import main.de.t4k.computer.*;
 
 
 

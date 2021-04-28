@@ -1,8 +1,8 @@
-package t4k.billing;
+package main.de.t4k.billing;
 
-import t4k.cart.Element;
-import t4k.common.Account;
-import t4k.cart.Cart;
+import main.de.t4k.cart.Element;
+import main.de.t4k.common.Account;
+import main.de.t4k.cart.Cart;
 
 public class Bill { //for creating the bill and save it in the DB
 

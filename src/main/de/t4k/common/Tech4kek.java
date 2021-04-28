@@ -1,9 +1,9 @@
-package t4k.common;
-import t4k.computer.*;
-import t4k.warehouse.*;
-import static t4k.warehouse.WarehouseFunctions.*;
-import t4k.cart.*;
-import t4k.billing.*;
+package main.de.t4k.common;
+import main.de.t4k.computer.*;
+import main.de.t4k.warehouse.*;
+import static main.de.t4k.warehouse.WarehouseFunctions.*;
+import main.de.t4k.cart.*;
+import main.de.t4k.billing.*;
 //test
 
 
@@ -92,7 +92,7 @@ public class Tech4kek {
             System.out.println(AnchorCart.getM_CountOfComputers());
         }
 
-        //System.out.println(TheCart.getM_ElementCount());
+        System.out.println(TheCart.getM_ElementCount());
 
         Element ELSucherg = TheCart.getM_firstElement();
 
