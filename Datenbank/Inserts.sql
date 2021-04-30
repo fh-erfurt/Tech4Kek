@@ -26,7 +26,7 @@ COMMIT;
 START TRANSACTION;
 USE `Tech4Kek`;
 INSERT INTO `Orders` (`orderId`, `createdAt`, `updatedAt`, `Status`, `AccountID`, `addressId`, `FirstName`, `LastName`) VALUES (1, DEFAULT, NULL, 0, 2, 2, 'Bernd', 'Benod');
-INSERT INTO `Orders` (`orderId`, `createdAt`, `updatedAt`, `Status`, `AccountID`, `addressId`, `FirstName`, `LastName`) VALUES (2, DEFAULT, NULL, 1, 1, 1, 'Lukas', 'Arnold');
+INSERT INTO `Orders` (`orderId`, `createdAt`, `updatedAt`, `Status`, `AccountID`, `addressId`, `FirstName`, `LastName`) VALUES (2, DEFAULT, NULL, 0, 1, 1, 'Lukas', 'Arnold');
 
 COMMIT;
 -- -----------------------------------------------------
@@ -39,14 +39,12 @@ INSERT INTO `Product` (`productId`, `createdAt`, `updatedAt`, `prodname`, `price
 COMMIT;
 
 -- -----------------------------------------------------
--- Data for table `Product_to_Order` Geht
+-- Data for table `Product_to_Order`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `Tech4Kek`;
-INSERT INTO `Product_to_Order` (`ptoId`, `createdAt`, `updatedAt`, `productcount`, `orderId`, `productId`) VALUES (1, DEFAULT, NULL, 3, 1, 5);
-INSERT INTO `Product_to_Order` (`ptoId`, `createdAt`, `updatedAt`, `productcount`, `orderId`, `productId`) VALUES (2, DEFAULT, NULL, 2, 1, 8);
-INSERT INTO `Product_to_Order` (`ptoId`, `createdAt`, `updatedAt`, `productcount`, `orderId`, `productId`) VALUES (3, DEFAULT, NULL, 7, 1, 1);
-INSERT INTO `Product_to_Order` (`ptoId`, `createdAt`, `updatedAt`, `productcount`, `orderId`, `productId`) VALUES (4, DEFAULT, NULL, 3, 2, 2);
+INSERT INTO `Product_to_Order` (`ptoId`, `createdAt`, `updatedAt`, `productcount`, `orderId`, `productId`) VALUES (1, DEFAULT, NULL, 3, 1, 1);
+INSERT INTO `Product_to_Order` (`ptoId`, `createdAt`, `updatedAt`, `productcount`, `orderId`, `productId`) VALUES (2, DEFAULT, NULL, 5, 2, 1);
 
 COMMIT;
 
@@ -74,13 +72,13 @@ COMMIT;
 START TRANSACTION;
 USE `Tech4Kek`;
 INSERT INTO `Product_has_Property` (`phpId`, `createdAt`, `updatedAt`, `productId`, `propertyId`) VALUES (1, DEFAULT, NULL, 1, 1);
-INSERT INTO `Product_has_Property` (`phpId`, `createdAt`, `updatedAt`, `productId`, `propertyId`) VALUES (1, DEFAULT, NULL, 1, 2);
-INSERT INTO `Product_has_Property` (`phpId`, `createdAt`, `updatedAt`, `productId`, `propertyId`) VALUES (1, DEFAULT, NULL, 1, 3);
-INSERT INTO `Product_has_Property` (`phpId`, `createdAt`, `updatedAt`, `productId`, `propertyId`) VALUES (1, DEFAULT, NULL, 1, 4);
-INSERT INTO `Product_has_Property` (`phpId`, `createdAt`, `updatedAt`, `productId`, `propertyId`) VALUES (1, DEFAULT, NULL, 1, 5);
-INSERT INTO `Product_has_Property` (`phpId`, `createdAt`, `updatedAt`, `productId`, `propertyId`) VALUES (1, DEFAULT, NULL, 1, 6);
-INSERT INTO `Product_has_Property` (`phpId`, `createdAt`, `updatedAt`, `productId`, `propertyId`) VALUES (1, DEFAULT, NULL, 1, 7);
-INSERT INTO `Product_has_Property` (`phpId`, `createdAt`, `updatedAt`, `productId`, `propertyId`) VALUES (1, DEFAULT, NULL, 1, 8);
+INSERT INTO `Product_has_Property` (`phpId`, `createdAt`, `updatedAt`, `productId`, `propertyId`) VALUES (2, DEFAULT, NULL, 1, 2);
+INSERT INTO `Product_has_Property` (`phpId`, `createdAt`, `updatedAt`, `productId`, `propertyId`) VALUES (3, DEFAULT, NULL, 1, 3);
+INSERT INTO `Product_has_Property` (`phpId`, `createdAt`, `updatedAt`, `productId`, `propertyId`) VALUES (4, DEFAULT, NULL, 1, 4);
+INSERT INTO `Product_has_Property` (`phpId`, `createdAt`, `updatedAt`, `productId`, `propertyId`) VALUES (5, DEFAULT, NULL, 1, 5);
+INSERT INTO `Product_has_Property` (`phpId`, `createdAt`, `updatedAt`, `productId`, `propertyId`) VALUES (6, DEFAULT, NULL, 1, 6);
+INSERT INTO `Product_has_Property` (`phpId`, `createdAt`, `updatedAt`, `productId`, `propertyId`) VALUES (7, DEFAULT, NULL, 1, 7);
+INSERT INTO `Product_has_Property` (`phpId`, `createdAt`, `updatedAt`, `productId`, `propertyId`) VALUES (8, DEFAULT, NULL, 1, 8);
 
 
 

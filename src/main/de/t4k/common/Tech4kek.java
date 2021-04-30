@@ -23,6 +23,9 @@ public class Tech4kek {
 
         //Tests:
 
+        //GEHT NOCH NICHT
+        //DatabaseConnection.Connect("jdbc:mysql://localhost:3306/mydb?autoReconnect=true&useSSL=false", "root", "root");
+
         Computer PC = new Computer();
         Person ThePerson = new Person();
         Account TheACC = new Account();
