@@ -5,20 +5,21 @@ import main.de.t4k.computer.Computerdetails;
 import main.de.t4k.cart.Element;
 import main.de.t4k.cart.Cart;
 import main.de.t4k.cart.Cartfunctions;
-import static org.junit.Assert.*;
-import org.junit.Test;
+
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class CartfunctionsTest {
 
     @Test
     public void addElement() {
-    //Create Objects
+        //Create Objects
         Cart TheCart = new Cart();
         Computer TheComputer = new Computer();
         Element TheElement = new Element();
         Cart TheCartFunction = new Cart();
 
-    //Give them values
+        //Give them values
         int number = 5;
 
         TheComputer.setM_StockNumber(number);
@@ -32,15 +33,15 @@ public class CartfunctionsTest {
 
         TheCart.getM_firstElement().setM_nextElement(TheElement);
 
-    //Call function
+        //Call function
         Cartfunctions.addElement(TheCartFunction, TheComputer, number);
 
-    //Compare values
-        assertEquals(TheCart.getM_firstElement().getM_nextElement().getM_nextElement(), TheCartFunction.getM_firstElement().getM_nextElement().getM_nextElement());
-        assertEquals(TheCart.getM_firstElement().getM_nextElement().getM_CountOfComputers(), TheCartFunction.getM_firstElement().getM_nextElement().getM_CountOfComputers());
-        assertEquals(TheCart.getM_firstElement().getM_nextElement().getM_Computer().getM_StockNumber(), TheCartFunction.getM_firstElement().getM_nextElement().getM_Computer().getM_StockNumber());
-        assertEquals(TheCart.getM_firstElement().getM_nextElement().getM_Computer().getM_NextComputer(), TheCartFunction.getM_firstElement().getM_nextElement().getM_Computer().getM_NextComputer());
-        assertEquals(TheCart.getM_firstElement().getM_nextElement().getM_Computer().getM_ComputerDetails().getM_Price(), TheCartFunction.getM_firstElement().getM_nextElement().getM_Computer().getM_ComputerDetails().getM_Price(), 0);
+        //Compare values
+        Assertions.assertThat(TheCart.getM_firstElement().getM_nextElement().getM_nextElement()).isEqualTo(TheCartFunction.getM_firstElement().getM_nextElement().getM_nextElement());
+        Assertions.assertThat(TheCart.getM_firstElement().getM_nextElement().getM_CountOfComputers()).isEqualTo(TheCartFunction.getM_firstElement().getM_nextElement().getM_CountOfComputers());
+        Assertions.assertThat(TheCart.getM_firstElement().getM_nextElement().getM_Computer().getM_StockNumber()).isEqualTo(TheCartFunction.getM_firstElement().getM_nextElement().getM_Computer().getM_StockNumber());
+        Assertions.assertThat(TheCart.getM_firstElement().getM_nextElement().getM_Computer().getM_NextComputer()).isEqualTo(TheCartFunction.getM_firstElement().getM_nextElement().getM_Computer().getM_NextComputer());
+        Assertions.assertThat(TheCart.getM_firstElement().getM_nextElement().getM_Computer().getM_ComputerDetails().getM_Price()).isEqualTo(TheCartFunction.getM_firstElement().getM_nextElement().getM_Computer().getM_ComputerDetails().getM_Price());
 
     }
 
@@ -80,10 +81,10 @@ public class CartfunctionsTest {
 
 
     //Compare values
-        assertEquals(TheCart.getM_firstElement().getM_nextElement().getM_CountOfComputers(), TheCartFunction.getM_firstElement().getM_nextElement().getM_CountOfComputers());
-        assertEquals(TheCart.getM_firstElement().getM_nextElement().getM_nextElement().getM_CountOfComputers(), TheCartFunction.getM_firstElement().getM_nextElement().getM_nextElement().getM_CountOfComputers());
-        assertEquals(TheCart.getM_firstElement().getM_nextElement().getM_nextElement().getM_nextElement().getM_CountOfComputers(), TheCartFunction.getM_firstElement().getM_nextElement().getM_nextElement().getM_nextElement().getM_CountOfComputers());
 
+        Assertions.assertThat(TheCart.getM_firstElement().getM_nextElement().getM_CountOfComputers()).isEqualTo(TheCartFunction.getM_firstElement().getM_nextElement().getM_CountOfComputers());
+        Assertions.assertThat(TheCart.getM_firstElement().getM_nextElement().getM_nextElement().getM_CountOfComputers()).isEqualTo(TheCartFunction.getM_firstElement().getM_nextElement().getM_nextElement().getM_CountOfComputers());
+        Assertions.assertThat(TheCart.getM_firstElement().getM_nextElement().getM_nextElement().getM_nextElement().getM_CountOfComputers()).isEqualTo(TheCartFunction.getM_firstElement().getM_nextElement().getM_nextElement().getM_nextElement().getM_CountOfComputers());
     }
 
     @Test
@@ -113,6 +114,8 @@ public class CartfunctionsTest {
 
         Result= Cartfunctions.searchElement(TheCart, ElementToSearch);
 
-        assertEquals(Element2.getM_Computer().getM_ItemId(), Result.getM_Computer().getM_ItemId());
+        Assertions.assertThat(Element2.getM_Computer().getM_ItemId()).isEqualTo(Result.getM_Computer().getM_ItemId());
+
     }
 }
+

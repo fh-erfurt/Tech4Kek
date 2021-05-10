@@ -6,9 +6,9 @@ import main.de.t4k.computer.Computer;
 import main.de.t4k.computer.Computerdetails;
 import main.de.t4k.cart.Cart;
 import main.de.t4k.billing.Bill;
-import static org.junit.Assert.*;
 
-import org.junit.Test;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class BillTest {
 
@@ -56,8 +56,9 @@ public class BillTest {
         Result = TheBill.getM_Price();
 
         //Compare values
-        assertEquals(Result, 2871.0, 0);
+        Assertions.assertThat(Result).isEqualTo(2871.0);
 
 
     }
 }
+

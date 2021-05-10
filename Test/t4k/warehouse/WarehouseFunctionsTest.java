@@ -7,9 +7,8 @@ import main.de.t4k.computer.Manufacturer;
 import main.de.t4k.warehouse.Warehouse;
 import main.de.t4k.warehouse.WarehouseFunctions;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class WarehouseFunctionsTest {
 
@@ -62,28 +61,30 @@ public class WarehouseFunctionsTest {
                 ManufacturerTest.getM_Agent(), ManufacturerTest.getM_ManName(), AddressTest.getM_ZIP(), AddressTest.getM_Street(), AddressTest.getM_HouseNr(), AddressTest.getM_Country(), AddressTest.getM_City());
 
         //Compare values
-        assertEquals(TestPC.getM_ComputerDetails().getM_Description(), ErgPC.getM_ComputerDetails().getM_Description());
-        assertEquals(TestPC.getM_ItemId(), ErgPC.getM_ItemId());
-        assertEquals(TestPC.getM_StockNumber(), ErgPC.getM_StockNumber());
-        assertEquals(TestPC.getM_ComputerDetails().getM_DetailName(), ErgPC.getM_ComputerDetails().getM_DetailName());
-        assertEquals(TestPC.getM_ComputerDetails().getM_Price(), ErgPC.getM_ComputerDetails().getM_Price(), 0);
-        assertEquals(TestPC.getM_ComputerDetails().getM_CpuClock(), ErgPC.getM_ComputerDetails().getM_CpuClock(), 0);
-        assertEquals(TestPC.getM_ComputerDetails().getM_CpuCoreAmount(), ErgPC.getM_ComputerDetails().getM_CpuCoreAmount());
-        assertEquals(TestPC.getM_ComputerDetails().getM_CpuName(), ErgPC.getM_ComputerDetails().getM_CpuName());
-        assertEquals(TestPC.getM_ComputerDetails().getM_CpuThreadAmount(), ErgPC.getM_ComputerDetails().getM_CpuThreadAmount());
-        assertEquals(TestPC.getM_ComputerDetails().getM_Gpu(), ErgPC.getM_ComputerDetails().getM_Gpu());
-        assertEquals(TestPC.getM_ComputerDetails().getM_GpuClock(), ErgPC.getM_ComputerDetails().getM_GpuClock(), 0);
-        assertEquals(TestPC.getM_ComputerDetails().getM_RamName(), ErgPC.getM_ComputerDetails().getM_RamName());
-        assertEquals(TestPC.getM_ComputerDetails().getM_RamSize(), ErgPC.getM_ComputerDetails().getM_RamSize());
-        assertEquals(TestPC.getM_ComputerDetails().getM_VramAmount(), ErgPC.getM_ComputerDetails().getM_VramAmount());
-        assertEquals(TestPC.getM_ManufacturerOfComputer().getM_ManPhoneNumber(), ErgPC.getM_ManufacturerOfComputer().getM_ManPhoneNumber());
-        assertEquals(TestPC.getM_ManufacturerOfComputer().getM_Agent(), ErgPC.getM_ManufacturerOfComputer().getM_Agent());
-        assertEquals(TestPC.getM_ManufacturerOfComputer().getM_ManName(), ErgPC.getM_ManufacturerOfComputer().getM_ManName());
-        assertEquals(TestPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_ZIP(), ErgPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_ZIP());
-        assertEquals(TestPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_Street(), ErgPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_Street());
-        assertEquals(TestPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_HouseNr(), ErgPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_HouseNr());
-        assertEquals(TestPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_Country(), ErgPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_Country());
-        assertEquals(TestPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_City(), ErgPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_City());
+
+        Assertions.assertThat(TestPC.getM_ComputerDetails().getM_Description()).isEqualTo(ErgPC.getM_ComputerDetails().getM_Description());
+        Assertions.assertThat(TestPC.getM_ItemId()).isEqualTo(ErgPC.getM_ItemId());
+        Assertions.assertThat(TestPC.getM_StockNumber()).isEqualTo(ErgPC.getM_StockNumber());
+        Assertions.assertThat(TestPC.getM_ComputerDetails().getM_DetailName()).isEqualTo(ErgPC.getM_ComputerDetails().getM_DetailName());
+        Assertions.assertThat(TestPC.getM_ComputerDetails().getM_Price()).isEqualTo(ErgPC.getM_ComputerDetails().getM_Price());
+        Assertions.assertThat(TestPC.getM_ComputerDetails().getM_CpuClock()).isEqualTo(ErgPC.getM_ComputerDetails().getM_CpuClock());
+        Assertions.assertThat(TestPC.getM_ComputerDetails().getM_CpuCoreAmount()).isEqualTo(ErgPC.getM_ComputerDetails().getM_CpuCoreAmount());
+        Assertions.assertThat(TestPC.getM_ComputerDetails().getM_CpuName()).isEqualTo(ErgPC.getM_ComputerDetails().getM_CpuName());
+        Assertions.assertThat(TestPC.getM_ComputerDetails().getM_CpuThreadAmount()).isEqualTo(ErgPC.getM_ComputerDetails().getM_CpuThreadAmount());
+        Assertions.assertThat(TestPC.getM_ComputerDetails().getM_Gpu()).isEqualTo(ErgPC.getM_ComputerDetails().getM_Gpu());
+        Assertions.assertThat(TestPC.getM_ComputerDetails().getM_GpuClock()).isEqualTo(ErgPC.getM_ComputerDetails().getM_GpuClock());
+        Assertions.assertThat(TestPC.getM_ComputerDetails().getM_RamName()).isEqualTo(ErgPC.getM_ComputerDetails().getM_RamName());
+        Assertions.assertThat(TestPC.getM_ComputerDetails().getM_RamSize()).isEqualTo(ErgPC.getM_ComputerDetails().getM_RamSize());
+        Assertions.assertThat(TestPC.getM_ComputerDetails().getM_VramAmount()).isEqualTo(ErgPC.getM_ComputerDetails().getM_VramAmount());
+        Assertions.assertThat(TestPC.getM_ManufacturerOfComputer().getM_ManPhoneNumber()).isEqualTo(ErgPC.getM_ManufacturerOfComputer().getM_ManPhoneNumber());
+        Assertions.assertThat(TestPC.getM_ManufacturerOfComputer().getM_Agent()).isEqualTo(ErgPC.getM_ManufacturerOfComputer().getM_Agent());
+        Assertions.assertThat(TestPC.getM_ManufacturerOfComputer().getM_ManName()).isEqualTo(ErgPC.getM_ManufacturerOfComputer().getM_ManName());
+        Assertions.assertThat(TestPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_ZIP()).isEqualTo(ErgPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_ZIP());
+        Assertions.assertThat(TestPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_Street()).isEqualTo(ErgPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_Street());
+        Assertions.assertThat(TestPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_HouseNr()).isEqualTo(ErgPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_HouseNr());
+        Assertions.assertThat(TestPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_Country()).isEqualTo(ErgPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_Country());
+        Assertions.assertThat(TestPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_City()).isEqualTo(ErgPC.getM_ManufacturerOfComputer().getM_AddressOfMan().getM_City());
+
     }
 
     @Test
@@ -126,10 +127,13 @@ public class WarehouseFunctionsTest {
 
 
         //Compare values
-        assertEquals(TheWarehouse.getFirstComputer().getM_ItemId(), TheWarehouseFunction.getFirstComputer().getM_ItemId());
-        assertEquals(TheWarehouse.getFirstComputer().getM_NextComputer().getM_ItemId(),TheWarehouseFunction.getFirstComputer().getM_NextComputer().getM_ItemId());
-        assertEquals(TheWarehouse.getFirstComputer().getM_NextComputer().getM_NextComputer().getM_ItemId(),TheWarehouseFunction.getFirstComputer().getM_NextComputer().getM_NextComputer().getM_ItemId());
-        assertEquals(Computer2,Result);
+
+        Assertions.assertThat(TheWarehouse.getFirstComputer().getM_ItemId()).isEqualTo(TheWarehouseFunction.getFirstComputer().getM_ItemId());
+        Assertions.assertThat(TheWarehouse.getFirstComputer().getM_NextComputer().getM_ItemId()).isEqualTo(TheWarehouseFunction.getFirstComputer().getM_NextComputer().getM_ItemId());
+        Assertions.assertThat(TheWarehouse.getFirstComputer().getM_NextComputer().getM_NextComputer().getM_ItemId()).isEqualTo(Result.getM_ItemId());
+        Assertions.assertThat(Computer2.getM_ItemId()).isEqualTo(TheWarehouseFunction.getFirstComputer().getM_NextComputer().getM_NextComputer().getM_ItemId());
+        Assertions.assertThat(Computer2).isEqualTo(Result);
+
     }
 
     @Test
@@ -158,8 +162,10 @@ public class WarehouseFunctionsTest {
 
         Result= WarehouseFunctions.searchComputer(TheWarehouse, ElementToSearch);
 
-        assertEquals(Computer2.getM_ItemId(), Result.getM_ItemId());
+        Assertions.assertThat(Computer2.getM_ItemId()).isEqualTo(Result.getM_ItemId());
+
 
     }
 
 }
+
