@@ -7,7 +7,6 @@ import main.de.t4k.billing.*;
 //test
 
 
-
 public class Tech4kek {
 
     public static void main(String[] args) {
