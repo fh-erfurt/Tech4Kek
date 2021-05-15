@@ -4,6 +4,9 @@ import main.de.t4k.warehouse.*;
 import static main.de.t4k.warehouse.WarehouseFunctions.*;
 import main.de.t4k.cart.*;
 import main.de.t4k.billing.*;
+
+import java.sql.*;
+
 //test
 
 
@@ -105,6 +108,30 @@ public class Tech4kek {
         System.out.println("The price is");
         System.out.println(TheBill.getM_Price());
         TheBill.print_Bill();
+
+
+
+        // So macht man die connection:   (Classe muss natürlich importet sein)
+        Connection theConnection = DatabaseConnection.getInstance().GetmyConnection();
+
+        //So übt man db Befehl aus:
+        try {
+            Statement myStmt = theConnection.createStatement();
+            String sql = "select * from account";
+            ResultSet rs = myStmt.executeQuery(sql);
+
+
+            //Kleine Test Ausgabe mit dem ergebnis
+            while(rs.next()){
+
+                System.out.println(rs.getString("LastName"));
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
 
 
     }

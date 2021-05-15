@@ -4,12 +4,16 @@ import java.sql.*;
 
 public class DatabaseConnection {
 
-    public static DatabaseConnection Connect(String url, String user, String password) {
+    private static Connection myConnection;
+    private static DatabaseConnection instance = null;
 
-        try {
-            Connection myConn = DriverManager.getConnection(url, user, password);
+    public DatabaseConnection(String url, String user, String password) {
+
+        try (Connection myConn = DriverManager.getConnection(url, user, password)){
+
+           //Zum Testen ob Connection geht
             Statement myStmt = myConn.createStatement();
-            String sql = "select * from Tech4Kek.Account";
+            String sql = "select * from account";
             ResultSet rs = myStmt.executeQuery(sql);
 
             while(rs.next()){
@@ -18,15 +22,24 @@ public class DatabaseConnection {
 
             }
 
+            myConnection = DriverManager.getConnection(url, user, password);
+
         }catch (SQLException e){
             e.printStackTrace();
+            myConnection = null;
         }
 
 
-
-
-
-        return null;
     }
 
+    public Connection GetmyConnection(){
+        return myConnection;
+    }
+
+    public static DatabaseConnection getInstance() {
+        if (instance == null)
+            return new DatabaseConnection("jdbc:mysql://localhost:3306/tech4kek", "root", "");
+        else
+            return instance;
+    }
 }
