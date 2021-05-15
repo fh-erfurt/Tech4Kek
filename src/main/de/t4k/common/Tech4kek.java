@@ -1,5 +1,6 @@
 package main.de.t4k.common;
 import main.de.t4k.computer.*;
+import main.de.t4k.storage.DatabaseConnection;
 import main.de.t4k.warehouse.*;
 import static main.de.t4k.warehouse.WarehouseFunctions.*;
 import main.de.t4k.cart.*;
