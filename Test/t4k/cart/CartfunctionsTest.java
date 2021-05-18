@@ -10,7 +10,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class CartfunctionsTest {
-
+/*
     @Test
     public void addElement() {
         //Create Objects
@@ -87,6 +87,9 @@ public class CartfunctionsTest {
         Assertions.assertThat(TheCart.getM_firstElement().getM_nextElement().getM_nextElement().getM_nextElement().getM_CountOfComputers()).isEqualTo(TheCartFunction.getM_firstElement().getM_nextElement().getM_nextElement().getM_nextElement().getM_CountOfComputers());
     }
 
+
+
+ */
     @Test
     public void searchElement() {
 

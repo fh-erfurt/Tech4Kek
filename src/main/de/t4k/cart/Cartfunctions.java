@@ -3,7 +3,7 @@ package main.de.t4k.cart;
 import main.de.t4k.computer.Computer;
 
 public class Cartfunctions {
-
+/*
     public static Element addElement(Cart TheCart, Computer TheComputer, int number) {
         //gives anchor node
         Element Anchor = TheCart.getM_firstElement();
@@ -57,6 +57,8 @@ public class Cartfunctions {
         return true;
     }
 
+
+ */
     public static Element searchElement(Cart TheCart, int ItemID){ //search for ItemID
         Element Anchor = TheCart.getM_firstElement();
         Element Placeholder = null;

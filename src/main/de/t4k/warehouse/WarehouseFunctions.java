@@ -6,7 +6,7 @@ import main.de.t4k.computer.*;
 
 public class WarehouseFunctions {
     //static so you can use the function, without creating an object
-    public static Computer addComputer(Warehouse TheWarehouse ,String description, int itemid, int stocknumber, String detailname, double price, double cpuclock, int cpucoreamount, String cpuname,
+    public static Computer addComputer(Warehouse TheWarehouse ,String description, int itemid, String detailname, double price, double cpuclock, int cpucoreamount, String cpuname,
                                        int threadcount, String gpuname, double gpuclock, String ramname, int ramsize, int vramamount, String manPhoneNum, String agent, String agentName, int zip, String street, String houseNr, String country, String city){
         //transfers node of the first computer from warehouse
         Computer Anchor = TheWarehouse.getFirstComputer();
@@ -25,7 +25,7 @@ public class WarehouseFunctions {
         NewPC.getM_ManufacturerOfComputer().setM_AddressOfMan(new Address());
         NewPC.setM_ComputerDetails(new Computerdetails());
         NewPC.setM_ItemId(itemid);
-        NewPC.setM_StockNumber(stocknumber);
+
 
         NewPC.getM_ManufacturerOfComputer().setM_ManPhoneNumber(manPhoneNum);
         NewPC.getM_ManufacturerOfComputer().setM_Agent(agent);

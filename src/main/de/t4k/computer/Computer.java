@@ -5,7 +5,6 @@ public class Computer {
     private Computerdetails m_ComputerDetails;
     private Manufacturer m_ManufacturerOfComputer;
     private Category m_Category;
-    private int m_StockNumber;
     private Computer m_NextComputer;
 
     public int getM_ItemId() {
@@ -30,14 +29,6 @@ public class Computer {
 
     public void setM_ManufacturerOfComputer(Manufacturer m_ManufacturerOfComputer) {
         this.m_ManufacturerOfComputer = m_ManufacturerOfComputer;
-    }
-
-    public int getM_StockNumber() {
-        return m_StockNumber;
-    }
-
-    public void setM_StockNumber(int m_StockNumber) {
-        this.m_StockNumber = m_StockNumber;
     }
 
     public Computer getM_NextComputer() {

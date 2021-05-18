@@ -53,10 +53,10 @@ public class WarehouseFunctionsTest {
         TestPC.setM_ManufacturerOfComputer(ManufacturerTest);
         TestPC.setM_ComputerDetails(TestDetails);
         TestPC.setM_ItemId(1);
-        TestPC.setM_StockNumber(10);
+
 
         //Call function
-        ErgPC = WarehouseFunctions.addComputer(WarehouseTest, TestDetails.getM_Description(), TestPC.getM_ItemId(), TestPC.getM_StockNumber(), TestDetails.getM_DetailName(), TestDetails.getM_Price(), TestDetails.getM_CpuClock(), TestDetails.getM_CpuCoreAmount(),
+        ErgPC = WarehouseFunctions.addComputer(WarehouseTest, TestDetails.getM_Description(), TestPC.getM_ItemId(), TestDetails.getM_DetailName(), TestDetails.getM_Price(), TestDetails.getM_CpuClock(), TestDetails.getM_CpuCoreAmount(),
                 TestDetails.getM_CpuName(), TestDetails.getM_CpuThreadAmount(), TestDetails.getM_Gpu(), TestDetails.getM_GpuClock(), TestDetails.getM_RamName(), TestDetails.getM_RamSize(), TestDetails.getM_VramAmount(), ManufacturerTest.getM_ManPhoneNumber(),
                 ManufacturerTest.getM_Agent(), ManufacturerTest.getM_ManName(), AddressTest.getM_ZIP(), AddressTest.getM_Street(), AddressTest.getM_HouseNr(), AddressTest.getM_Country(), AddressTest.getM_City());
 
@@ -64,7 +64,6 @@ public class WarehouseFunctionsTest {
 
         Assertions.assertThat(TestPC.getM_ComputerDetails().getM_Description()).isEqualTo(ErgPC.getM_ComputerDetails().getM_Description());
         Assertions.assertThat(TestPC.getM_ItemId()).isEqualTo(ErgPC.getM_ItemId());
-        Assertions.assertThat(TestPC.getM_StockNumber()).isEqualTo(ErgPC.getM_StockNumber());
         Assertions.assertThat(TestPC.getM_ComputerDetails().getM_DetailName()).isEqualTo(ErgPC.getM_ComputerDetails().getM_DetailName());
         Assertions.assertThat(TestPC.getM_ComputerDetails().getM_Price()).isEqualTo(ErgPC.getM_ComputerDetails().getM_Price());
         Assertions.assertThat(TestPC.getM_ComputerDetails().getM_CpuClock()).isEqualTo(ErgPC.getM_ComputerDetails().getM_CpuClock());

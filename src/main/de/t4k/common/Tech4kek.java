@@ -26,8 +26,8 @@ public class Tech4kek {
 
         //Tests:
 
-        //GEHT NOCH NICHT
-        //DatabaseConnection.Connect("jdbc:mysql://localhost:3306/mydb?autoReconnect=true&useSSL=false", "root", "root");
+        // So macht man die connection:   (Classe muss natürlich importet sein)
+        Connection theConnection = DatabaseConnection.getInstance().GetmyConnection();
 
         Computer PC = new Computer();
         Person ThePerson = new Person();
@@ -44,15 +44,37 @@ public class Tech4kek {
         Warehouse TheWarehouse = new Warehouse();
         //load all entries
 
-        delComputer(TheWarehouse, 1);
 
-        //computer print function
+
+        //Hier ein beispiel wie man die Computer reinladen kann
+
+        try {
+            Statement myStmt = theConnection.createStatement();
+            String sql = "select * from Product";
+            ResultSet rs = myStmt.executeQuery(sql);
+
+
+            //Kleine Test Ausgabe mit dem ergebnis
+            while(rs.next()){
+
+                addComputer(TheWarehouse, "", rs.getInt("productId"), rs.getString("ProdName"),rs.getDouble("Price"), 3, 5, "", 5, "", 500, "",
+                        6, 6, "", "", "", 99869, "", "", "", "");
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        //Ausgabe der Computer
         Computer Anchor = TheWarehouse.getFirstComputer();
         while (Anchor.getM_NextComputer() != null) {
             Anchor = Anchor.getM_NextComputer();
-            System.out.println(Anchor.getM_ComputerDetails().getM_Description());
+            System.out.println(Anchor.getM_ComputerDetails().getM_Price());
         }
 
+        /*
         Computer PC1 = new Computer();
         Computer PC2 = new Computer();
         Computer PC3 = new Computer();
@@ -112,8 +134,7 @@ public class Tech4kek {
 
 
 
-        // So macht man die connection:   (Classe muss natürlich importet sein)
-        Connection theConnection = DatabaseConnection.getInstance().GetmyConnection();
+
 
         //So übt man db Befehl aus:
         try {
@@ -123,7 +144,7 @@ public class Tech4kek {
 
 
             //Kleine Test Ausgabe mit dem ergebnis
-            while(rs.next()){
+            while(rs.next() != false){
 
                 System.out.println(rs.getString("LastName"));
 
@@ -134,7 +155,7 @@ public class Tech4kek {
         }
 
 
-
+ */
     }
 
 }
