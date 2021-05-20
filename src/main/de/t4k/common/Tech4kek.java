@@ -26,7 +26,7 @@ public class Tech4kek {
 
         //Tests:
 
-        // So macht man die connection:   (Classe muss natürlich importet sein)
+        // So macht man die connection:   (klasse muss natürlich importet sein)
         Connection theConnection = DatabaseConnection.getInstance().GetmyConnection();
 
         Computer PC = new Computer();
