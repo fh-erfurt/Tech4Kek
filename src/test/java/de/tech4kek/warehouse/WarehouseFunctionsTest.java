@@ -1,4 +1,4 @@
-package java.de.tech4kek.warehouse;
+package de.tech4kek.warehouse;
 
 import de.tech4kek.common.Address;
 import de.tech4kek.computer.Computer;

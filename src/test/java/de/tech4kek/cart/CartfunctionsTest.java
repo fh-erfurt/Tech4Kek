@@ -1,4 +1,4 @@
-package java.de.tech4kek.cart;
+package de.tech4kek.cart;
 
 import de.tech4kek.computer.Computer;
 import de.tech4kek.computer.Computerdetails;

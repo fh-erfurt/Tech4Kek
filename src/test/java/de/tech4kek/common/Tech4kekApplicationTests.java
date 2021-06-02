@@ -1,4 +1,4 @@
-package java.de.tech4kek.common;
+package de.tech4kek.common;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package java.de.tech4kek.billing;
+package de.tech4kek.billing;
 
 import de.tech4kek.cart.Element;
 import de.tech4kek.common.Account;
