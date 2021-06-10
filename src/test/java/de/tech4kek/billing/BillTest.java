@@ -31,9 +31,9 @@ public class BillTest {
         Computerdetails Computer2Details = new Computerdetails();
         Computerdetails Computer3Details = new Computerdetails();
 
-        Computer1Details.setM_Price(300);
-        Computer2Details.setM_Price(200);
-        Computer3Details.setM_Price(400);
+        //Computer1Details.setM_Price(300);
+        //Computer2Details.setM_Price(200);
+        //Computer3Details.setM_Price(400);
 
         Computer1.setM_ComputerDetails(Computer1Details);
         Computer2.setM_ComputerDetails(Computer2Details);

@@ -1,8 +1,7 @@
 package de.tech4kek.common;
 import de.tech4kek.computer.*;
 import de.tech4kek.storage.DatabaseConnection;
-import de.tech4kek.warehouse.*;
-import static de.tech4kek.warehouse.WarehouseFunctions.*;
+
 import de.tech4kek.cart.*;
 import de.tech4kek.billing.*;
 
@@ -41,13 +40,20 @@ public class Tech4kek {
 
         System.out.println(TheACC.GetEMail());
 
-        Warehouse TheWarehouse = new Warehouse();
         //load all entries
+        ComputerFunctions TheFunctions = new ComputerFunctions();
 
+        //Zum Rausfinden wie viele Produkte wir haben
+
+
+        Computer ComputerListe[] = TheFunctions.loadComputer();
+
+        System.out.println(ComputerListe[0].getM_ComputerDetails().getM_DetailName());
+        System.out.println(ComputerListe[1].getM_ComputerDetails().getM_DetailName());
 
 
         //Hier ein beispiel wie man die Computer reinladen kann
-
+        /*
         try {
             Statement myStmt = theConnection.createStatement();
             String sql = "select * from Product";
@@ -74,7 +80,7 @@ public class Tech4kek {
             System.out.println(Anchor.getM_ComputerDetails().getM_Price());
         }
 
-        /*
+
         Computer PC1 = new Computer();
         Computer PC2 = new Computer();
         Computer PC3 = new Computer();
