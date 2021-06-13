@@ -14,6 +14,7 @@ public class Tech4kek {
 
     public static void main(String[] args) {
 
+
         //future functions
 
             //login checks email and password and creates instance for the user
