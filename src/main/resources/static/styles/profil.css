@@ -1,0 +1,108 @@
+*{
+
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    width: 700px;
+    background-color: #2D2D2D;   
+    color: #FF6E00;
+}
+
+form{
+    text-align: left;
+    width: 40%;
+    margin: auto;
+}
+
+form h2{
+    color: #FF6E00;
+}
+
+.profile input{
+    padding: 0px;
+    height: 20px;
+    width: 100%;
+    border: none;
+    color: white;
+    background-color: #212121;
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0px 1000px #212121 inset;
+}
+
+.profile input:hover{
+    background-color: #191919;
+    -webkit-box-shadow: 0 0 0px 1000px #191919 inset;
+}
+
+.label2{
+    color: rgb(194, 194, 194);
+}
+
+.message{
+    text-align: center;
+    font-size: larger;
+}
+
+.button{
+    font-size: large;
+    cursor: pointer;
+    height: 50px !important;
+    -webkit-text-fill-color: #FF6E00 !important;
+}
+
+.button:hover{
+    background-color: #191919;
+    -webkit-box-shadow: 0 0 0px 1000px #191919 inset;
+}
+
+
+.backButton{
+    width: 50% !important;
+    margin-left: 25%;
+    font-size: large;
+    cursor: pointer;
+    height: 50px !important;
+    -webkit-text-fill-color: #191919 !important;
+	background-color: #FF6E00;
+    -webkit-box-shadow: 0 0 0px 1000px #FF6E00 inset !important;
+	border: none;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.backButton:hover{
+    background-color: #191919;
+    -webkit-box-shadow: 0 0 0px 1000px #212121 inset !important;
+    -webkit-text-fill-color: #FF6E00 !important;
+}
+
+@media screen and (max-width: 768px){
+
+    .profile{
+        width: 100%;
+    }
+
+    form{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 500px){
+
+    .profile{
+        width: 100%;
+    }
+
+    form{
+        width: 80%;
+    }
+}

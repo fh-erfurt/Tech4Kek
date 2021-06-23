@@ -19,4 +19,10 @@ public class NavigationController {
         return "contact";
     }
 
+    @GetMapping("/agb")
+    public String getAGB(Model model){
+        model.addAttribute("activePage", "agb");
+        return "agb";
+    }
+
 }

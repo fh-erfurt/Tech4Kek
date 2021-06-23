@@ -1,0 +1,95 @@
+*{
+
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    width: 700px;
+    background-color: #2D2D2D;   
+    color: #FF6E00;
+}
+
+form{
+    text-align: left;
+    width: 40%;
+    margin: auto;
+}
+
+.register input, select{
+    height: 20px;
+    width: 100%;
+    padding: 0;
+    border: none;
+    color: white;
+    background-color: #212121 !important;
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0px 1000px #212121 inset;
+}
+
+.register input:hover, select:hover{
+    background-color: #191919;
+    -webkit-box-shadow: 0 0 0px 1000px #191919 inset;
+}
+
+.registerButton{
+    font-size: large;
+    cursor: pointer;
+    height: 50px !important;
+    -webkit-text-fill-color: #FF6E00 !important;
+}
+
+.registerButton:hover{
+    background-color: #191919;
+    -webkit-box-shadow: 0 0 0px 1000px #191919 inset;
+}
+
+.accExists{
+    text-align: center;
+    width: 100%;
+}
+
+.error{
+    color: #FF6E00;
+    font-size: large;
+    text-align: center;
+}
+
+.loginNow{
+    color: #8d0000;
+    font-size: larger;
+}
+
+.loginNow:hover{
+    color: #bd0000;
+}
+
+@media screen and (max-width: 768px){
+
+    .register{
+        width: 100%;
+    }
+
+    form{
+        width: 60%;
+    }
+}
+
+
+@media screen and (max-width: 500px){
+
+    .register{
+        width: 100%;
+    }
+
+    form{
+        width: 80%;
+    }
+}
