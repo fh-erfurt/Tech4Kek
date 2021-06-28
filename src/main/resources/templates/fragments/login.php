@@ -7,7 +7,7 @@
 
 <div class="login">
 	<br>
-	<h1>Login</h1>
+	<h1 class="display-4">Login</h1>
 	<section>
 		<? if(isset($error)): ?>
 		<p class='errorMessage' id=phpError><?= $error ?></p>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring MVC</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link th:href="@{styles/main.css}" rel="stylesheet" />
+</head>
+<body class="d-flex flex-column h-100">
+<div th:replace="~{fragments/header :: header}"></div>
+
+<main role="main" class="flex-shrink-0">
+    <div class="container mt-5">
+        <div class="jumbotron">
+
+
+<!--
+Einfach für die anderen Seiten den bereich oben und unten kopieren und dazwischen den Seiteninhalt kopieren. Nicht vergessen im Navigationcontroller.jar die neue Seite anzulegen
+Für die überschrift die klasse in den header packen
+-->
+
+
+
+            <div class="login">
+                <br>
+                <h1 class="display-4">Login</h1>
+                <section>
+                    <!-- The Login Form -->
+                    <section  class=loginstyle>
+                        <? if(isset($error)): ?>
+                        <p class='errorMessage' id=phpError><?=$error?></p>
+                        <? endif;?>
+
+                        <form method='post' name='loginForm' id=login-form>
+                            <label for='email'>E-Mail</label> <br />
+                            <input type='email' name='email' id='email'>
+                            <span id='emailError'></span><br />
+                            <br />
+                            <label for='password'>Passwort</label> <br />
+                            <input type='password' name='password' id='password' /><br />
+                            <span id='passwordError'></span><br />
+                            <input type='submit' name='submitBtn' value='Login' class='loginButton'><br />
+                        </form>
+                    </section>
+
+
+
+
+                </section>
+            </div>
+
+
+
+        </div>
+    </div>
+</main>
+
+<div  th:replace="~{fragments/footer :: footer}"> </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous">
+</script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>

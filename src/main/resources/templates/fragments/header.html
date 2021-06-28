@@ -24,17 +24,23 @@
             <li class="nav-item" th:class="${activePage == 'contact'} ? 'nav-item active' : 'nav-item'">
                 <a class="nav-link" th:href="@{/contact}">Contact</a>
             </li>
-            <!--            <li class="nav-item" th:class="${#httpServletRequest.requestURI.contains('contact')} ? 'nav-link active' : 'nav-link'">-->
+            <!--            <li class="nav-item" th:class="${#httpServletRequest.requestURI.contains('agb')} ? 'nav-link active' : 'nav-link'">-->
             <li class="nav-item" th:class="${activePage == 'agb'} ? 'nav-item active' : 'nav-item'">
                 <a class="nav-link" th:href="@{/agb}">AGB</a>
+            </li>
+            <!--            <li class="nav-item" th:class="${#httpServletRequest.requestURI.contains('login')} ? 'nav-link active' : 'nav-link'">-->
+            <li class="nav-item" th:class="${activePage == 'login'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/login}">Login</a>
+            </li>
+            <!--            <li class="nav-item" th:class="${#httpServletRequest.requestURI.contains('register')} ? 'nav-link active' : 'nav-link'">-->
+            <li class="nav-item" th:class="${activePage == 'register'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/register}">Register</a>
             </li>
 
         </ul>
     </div>
+
 </nav>
-
-
-
 
 
 </body>

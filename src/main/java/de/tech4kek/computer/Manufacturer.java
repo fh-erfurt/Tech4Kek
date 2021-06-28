@@ -6,7 +6,6 @@ public class Manufacturer {
     private String m_ManName;
     private Address m_AddressOfMan;
     private String m_Agent;
-    private String m_ManPhoneNumber;
 
     public String getM_ManName() {
         return m_ManName;
@@ -32,11 +31,4 @@ public class Manufacturer {
         this.m_Agent = m_Agent;
     }
 
-    public String getM_ManPhoneNumber() {
-        return m_ManPhoneNumber;
-    }
-
-    public void setM_ManPhoneNumber(String m_ManPhoneNumber) {
-        this.m_ManPhoneNumber = m_ManPhoneNumber;
-    }
 }

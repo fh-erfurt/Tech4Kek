@@ -137,6 +137,26 @@ public class ComputerFunctions {
                 RSTemp.next();
                 TheArray[counter].getM_ComputerDetails().setM_VramAmount(RSTemp.getInt("Value"));
 
+
+
+                SQLTEMP = "Select * From address where addressId = (SELECT Value FROM property JOIN product_has_property ON property.propertyId = product_has_property.propertyId WHERE product_has_property.productId = " +tempnumber +" and property.name = 'pcmanuaddressid')";
+                RSTemp = myStmt.executeQuery(SQLTEMP);
+                RSTemp.next();
+                TheArray[counter].getM_ManufacturerOfComputer().getM_AddressOfMan().setM_City(RSTemp.getString("City"));
+                TheArray[counter].getM_ManufacturerOfComputer().getM_AddressOfMan().setM_Country(RSTemp.getString("Country"));
+                TheArray[counter].getM_ManufacturerOfComputer().getM_AddressOfMan().setM_HouseNr(RSTemp.getString("Number"));
+                TheArray[counter].getM_ManufacturerOfComputer().getM_AddressOfMan().setM_Street(RSTemp.getString("Street"));
+                TheArray[counter].getM_ManufacturerOfComputer().getM_AddressOfMan().setM_ZIP(RSTemp.getInt("Zipcode"));
+
+
+                SQLTEMP = "Select * From account where accountId = (SELECT Value FROM property JOIN product_has_property ON property.propertyId = product_has_property.propertyId WHERE product_has_property.productId = " +tempnumber +" and property.name = 'pcmanuaddressid')";
+                RSTemp = myStmt.executeQuery(SQLTEMP);
+                RSTemp.next();
+                TheArray[counter].getM_ManufacturerOfComputer().setM_Agent(RSTemp.getString("Email"));
+                TheArray[counter].getM_ManufacturerOfComputer().setM_ManName(RSTemp.getString("FirstName") +" "+ RSTemp.getString("LastName"));
+
+
+
                 tempnumber = tempnumber +1;
                 counter= counter +1;
             }
@@ -145,7 +165,6 @@ public class ComputerFunctions {
             e.printStackTrace();
         }
 
-        System.out.println(TheArray[0].getM_ComputerDetails().getM_DetailName());
             return TheArray;
     }
 /*

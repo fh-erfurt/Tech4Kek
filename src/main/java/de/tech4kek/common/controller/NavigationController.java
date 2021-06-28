@@ -25,4 +25,16 @@ public class NavigationController {
         return "agb";
     }
 
+    @GetMapping("/login")
+    public String getLogin(Model model){
+        model.addAttribute("activePage", "login");
+        return "login";
+    }
+
+    @GetMapping("/register")
+    public String getRegister(Model model){
+        model.addAttribute("activePage", "register");
+        return "register";
+    }
+
 }
