@@ -48,14 +48,18 @@ public class Tech4kek {
 
 
         //Computer ComputerListe[] = TheFunctions.loadComputer();
-        Computer ComputerErgebnisse[] = TheFunctions.searchComputer("Sony");
+
 
 
         //System.out.println(ComputerListe[0].getM_ComputerDetails().getM_DetailName());
         //System.out.println(ComputerListe[1].getM_ComputerDetails().getM_DetailName());
 
-        System.out.println(ComputerErgebnisse[0].getM_ComputerDetails().getM_DetailName());
+       //Computer Suche test
+        Computer ComputerErgebnisse[] = TheFunctions.searchComputer("Xtreme");
+        for (int i = 0; i < ComputerErgebnisse.length; i++) {
 
+            System.out.println(ComputerErgebnisse[i].getM_ComputerDetails().getM_DetailName());
+        }
 
         //Hier ein beispiel wie man die Computer reinladen kann
         /*

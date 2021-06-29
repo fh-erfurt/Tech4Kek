@@ -39,7 +39,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `Tech4Kek`;
-INSERT INTO `Product` (`productId`, `createdAt`, `updatedAt`, `prodname`, `price`, `prodType`, `onStock`) VALUES (1, DEFAULT, NULL, 'Sony Vaio', 259.99, 1, 30);
+INSERT INTO `Product` (`productId`, `createdAt`, `updatedAt`, `prodname`, `price`, `prodType`, `onStock`) VALUES (1, DEFAULT, NULL, 'Sony Vaio Xtreme', 259.99, 1, 30);
 INSERT INTO `Product` (`productId`, `createdAt`, `updatedAt`, `prodname`, `price`, `prodType`, `onStock`) VALUES (2, DEFAULT, NULL, 'Dell Xtreme', 899.99, 1, 25);
 
 COMMIT;
