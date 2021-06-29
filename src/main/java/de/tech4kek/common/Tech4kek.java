@@ -39,7 +39,7 @@ public class Tech4kek {
         TheACC.SetPerson(ThePerson);
         TheACC.GetPerson().setM_Firstname("Arnold");
 
-        System.out.println(TheACC.GetEMail());
+        //System.out.println(TheACC.GetEMail());
 
         //load all entries
         ComputerFunctions TheFunctions = new ComputerFunctions();
@@ -47,10 +47,14 @@ public class Tech4kek {
         //Zum Rausfinden wie viele Produkte wir haben
 
 
-        Computer ComputerListe[] = TheFunctions.loadComputer();
+        //Computer ComputerListe[] = TheFunctions.loadComputer();
+        Computer ComputerErgebnisse[] = TheFunctions.searchComputer("Sony");
 
-        System.out.println(ComputerListe[0].getM_ComputerDetails().getM_DetailName());
-        System.out.println(ComputerListe[1].getM_ComputerDetails().getM_DetailName());
+
+        //System.out.println(ComputerListe[0].getM_ComputerDetails().getM_DetailName());
+        //System.out.println(ComputerListe[1].getM_ComputerDetails().getM_DetailName());
+
+        System.out.println(ComputerErgebnisse[0].getM_ComputerDetails().getM_DetailName());
 
 
         //Hier ein beispiel wie man die Computer reinladen kann

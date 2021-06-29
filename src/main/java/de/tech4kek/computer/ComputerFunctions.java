@@ -191,27 +191,178 @@ public class ComputerFunctions {
 
     return isDeleted;
     };
+*/
 
-    public static Computer searchComputer(Warehouse TheWarehouse, int id){  //search for id
-        Computer Anchor = TheWarehouse.getFirstComputer();
-        Computer Placeholder = null;
+    public static Computer[] searchComputer(String detailname){  //search for name
 
-        while (Anchor.getM_NextComputer() != null){
+        int anzahlErg = 0;
 
-            if(Anchor.getM_ItemId() == id){
-                Placeholder = Anchor;
-                System.out.println("Element Gefunden");
-                break;
+        Connection theConnection = DatabaseConnection.getInstance().GetmyConnection();
+
+        try {
+            Statement myStmt = theConnection.createStatement();
+            String sqlprods = "select * from product WHERE ProdName like '%" +detailname +"%'";
+            ResultSet RSProducts = myStmt.executeQuery(sqlprods);
+
+            while (RSProducts.next()) {
+
+                anzahlErg = anzahlErg + 1;
+
             }
-            Anchor = Anchor.getM_NextComputer();
+
+
+        }catch (SQLException e) {
+            e.printStackTrace();
         }
 
-        if(Placeholder == null){
+        int produktID[] = new int[anzahlErg];
+
+        try {
+            Statement myStmt = theConnection.createStatement();
+            String sqlprods = "select * from product WHERE ProdName like '%" +detailname +"%'";
+            ResultSet RSProducts = myStmt.executeQuery(sqlprods);
+
+            int number = 0;
+
+            while (RSProducts.next()) {
+
+            produktID[number] = RSProducts.getInt("productId"); //Die ProduktID's der Ergebnisse werden in array gefüllt
+            number = number +1;
+
+            }
+
+
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        Computer Ergebnisse[] = new Computer[anzahlErg];
+        for(int i = 0; i< anzahlErg; i++){
+            Ergebnisse[i] = new Computer();
+        }
+
+
+        try{
+
+
+            Statement myStmt = theConnection.createStatement();
+
+
+
+
+
+
+            for (int i =0; i < anzahlErg; i++){
+                Ergebnisse[i].setM_ManufacturerOfComputer(new Manufacturer());
+                Ergebnisse[i].getM_ManufacturerOfComputer().setM_AddressOfMan(new Address());
+                Ergebnisse[i].setM_ComputerDetails(new Computerdetails());
+                Ergebnisse[i].setM_ItemId(produktID[i]);
+
+            }
+
+
+            System.out.println("ok");
+
+
+        String SQLTEMP = null;
+        ResultSet RSTemp = null;
+        int counter = 0;
+
+        for (int i =0; i < anzahlErg; i++){
+
+            SQLTEMP = "SELECT * FROM property JOIN product_has_property ON property.propertyId = product_has_property.propertyId WHERE product_has_property.productId = " +produktID[i] +" and property.Name = 'detailname'";
+            RSTemp = myStmt.executeQuery(SQLTEMP);
+            RSTemp.next();
+            Ergebnisse[counter].getM_ComputerDetails().setM_DetailName(RSTemp.getString("Value"));
+
+            SQLTEMP = "SELECT* FROM property JOIN product_has_property ON property.propertyId = product_has_property.propertyId WHERE product_has_property.productId = " +produktID[i] +" and property.name = 'price'";
+            RSTemp = myStmt.executeQuery(SQLTEMP);
+            RSTemp.next();
+            Ergebnisse[counter].getM_ComputerDetails().setM_Price(RSTemp.getDouble("Value"));
+
+            SQLTEMP = "SELECT* FROM property JOIN product_has_property ON property.propertyId = product_has_property.propertyId WHERE product_has_property.productId = " +produktID[i] +" and property.name = 'description'";
+            RSTemp = myStmt.executeQuery(SQLTEMP);
+            RSTemp.next();
+            Ergebnisse[counter].getM_ComputerDetails().setM_Description(RSTemp.getString("Value"));
+
+            SQLTEMP = "SELECT* FROM property JOIN product_has_property ON property.propertyId = product_has_property.propertyId WHERE product_has_property.productId = " +produktID[i] +" and property.name = 'cpuclock'";
+            RSTemp = myStmt.executeQuery(SQLTEMP);
+            RSTemp.next();
+            Ergebnisse[counter].getM_ComputerDetails().setM_CpuClock(RSTemp.getDouble("Value"));
+
+            SQLTEMP = "SELECT* FROM property JOIN product_has_property ON property.propertyId = product_has_property.propertyId WHERE product_has_property.productId = " +produktID[i] +" and property.name = 'coreamount'";
+            RSTemp = myStmt.executeQuery(SQLTEMP);
+            RSTemp.next();
+            Ergebnisse[counter].getM_ComputerDetails().setM_CpuCoreAmount(RSTemp.getInt("Value"));
+
+            SQLTEMP = "SELECT* FROM property JOIN product_has_property ON property.propertyId = product_has_property.propertyId WHERE product_has_property.productId = " +produktID[i] +" and property.name = 'cpuname'";
+            RSTemp = myStmt.executeQuery(SQLTEMP);
+            RSTemp.next();
+            Ergebnisse[counter].getM_ComputerDetails().setM_CpuName(RSTemp.getString("Value"));
+
+            SQLTEMP = "SELECT* FROM property JOIN product_has_property ON property.propertyId = product_has_property.propertyId WHERE product_has_property.productId = " +produktID[i] +" and property.name = 'cputhreadamount'";
+            RSTemp = myStmt.executeQuery(SQLTEMP);
+            RSTemp.next();
+            Ergebnisse[counter].getM_ComputerDetails().setM_CpuThreadAmount(RSTemp.getInt("Value"));
+
+            SQLTEMP = "SELECT* FROM property JOIN product_has_property ON property.propertyId = product_has_property.propertyId WHERE product_has_property.productId = " +produktID[i] +" and property.name = 'gpuname'";
+            RSTemp = myStmt.executeQuery(SQLTEMP);
+            RSTemp.next();
+            Ergebnisse[counter].getM_ComputerDetails().setM_Gpu(RSTemp.getString("Value"));
+
+            SQLTEMP = "SELECT* FROM property JOIN product_has_property ON property.propertyId = product_has_property.propertyId WHERE product_has_property.productId = " +produktID[i] +" and property.name = 'gpuclock'";
+            RSTemp = myStmt.executeQuery(SQLTEMP);
+            RSTemp.next();
+            Ergebnisse[counter].getM_ComputerDetails().setM_GpuClock(RSTemp.getDouble("Value"));
+
+            SQLTEMP = "SELECT* FROM property JOIN product_has_property ON property.propertyId = product_has_property.propertyId WHERE product_has_property.productId = " +produktID[i] +" and property.name = 'ramname'";
+            RSTemp = myStmt.executeQuery(SQLTEMP);
+            RSTemp.next();
+            Ergebnisse[counter].getM_ComputerDetails().setM_Ram(RSTemp.getString("Value"));
+
+            SQLTEMP = "SELECT* FROM property JOIN product_has_property ON property.propertyId = product_has_property.propertyId WHERE product_has_property.productId = " +produktID[i] +" and property.name = 'ramsize'";
+            RSTemp = myStmt.executeQuery(SQLTEMP);
+            RSTemp.next();
+            Ergebnisse[counter].getM_ComputerDetails().setM_RamSize(RSTemp.getInt("Value"));
+
+            SQLTEMP = "SELECT* FROM property JOIN product_has_property ON property.propertyId = product_has_property.propertyId WHERE product_has_property.productId = " +produktID[i] +" and property.name = 'vramamount'";
+            RSTemp = myStmt.executeQuery(SQLTEMP);
+            RSTemp.next();
+            Ergebnisse[counter].getM_ComputerDetails().setM_VramAmount(RSTemp.getInt("Value"));
+
+
+
+            SQLTEMP = "Select * From address where addressId = (SELECT Value FROM property JOIN product_has_property ON property.propertyId = product_has_property.propertyId WHERE product_has_property.productId = " +produktID[i] +" and property.name = 'pcmanuaddressid')";
+            RSTemp = myStmt.executeQuery(SQLTEMP);
+            RSTemp.next();
+            Ergebnisse[counter].getM_ManufacturerOfComputer().getM_AddressOfMan().setM_City(RSTemp.getString("City"));
+            Ergebnisse[counter].getM_ManufacturerOfComputer().getM_AddressOfMan().setM_Country(RSTemp.getString("Country"));
+            Ergebnisse[counter].getM_ManufacturerOfComputer().getM_AddressOfMan().setM_HouseNr(RSTemp.getString("Number"));
+            Ergebnisse[counter].getM_ManufacturerOfComputer().getM_AddressOfMan().setM_Street(RSTemp.getString("Street"));
+            Ergebnisse[counter].getM_ManufacturerOfComputer().getM_AddressOfMan().setM_ZIP(RSTemp.getInt("Zipcode"));
+
+
+            SQLTEMP = "Select * From account where accountId = (SELECT Value FROM property JOIN product_has_property ON property.propertyId = product_has_property.propertyId WHERE product_has_property.productId = " +produktID[i] +" and property.name = 'pcmanuaddressid')";
+            RSTemp = myStmt.executeQuery(SQLTEMP);
+            RSTemp.next();
+            Ergebnisse[counter].getM_ManufacturerOfComputer().setM_Agent(RSTemp.getString("Email"));
+            Ergebnisse[counter].getM_ManufacturerOfComputer().setM_ManName(RSTemp.getString("FirstName") +" "+ RSTemp.getString("LastName"));
+
+            counter= counter +1;
+            System.out.println("Element gefunden");
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+
+        if(Ergebnisse.length ==0){
             System.out.println("Element nicht vorhanden");
         }
 
-        return Placeholder;
+        return Ergebnisse;
     }
-*/
+
 
 }
