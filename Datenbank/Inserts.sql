@@ -5,10 +5,10 @@ USE `Tech4Kek` ;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `Tech4Kek`;
-INSERT INTO `Address` (`addressId`, `createdAt`, `updatedAt`, `country`, `state`, `zipcode`, `city`, `street`, `number`) VALUES (1, DEFAULT, NULL, 'Deutschland', 'Thüringen', '99869', 'Wangenheim', 'Grüne Gasse', '2');
-INSERT INTO `Address` (`addressId`, `createdAt`, `updatedAt`, `country`, `state`, `zipcode`, `city`, `street`, `number`) VALUES (2, DEFAULT, NULL, 'Deutschland', 'Thüringen', '99085', 'Erfurt', 'Leipziger Straße', '15b');
-INSERT INTO `Address` (`addressId`, `createdAt`, `updatedAt`, `country`, `state`, `zipcode`, `city`, `street`, `number`) VALUES (3, DEFAULT, NULL, 'Deutschland', 'Thüringen', '99867', 'Gotha', 'Geber Straße', '12');
-INSERT INTO `Address` (`addressId`, `createdAt`, `updatedAt`, `country`, `state`, `zipcode`, `city`, `street`, `number`) VALUES (4, DEFAULT, NULL, 'Deutschland', 'Thüringen', '99867', 'Bergenberg', 'Berg Straße', '8');
+INSERT INTO `Address` (`addressId`, `createdAt`, `updatedAt`, `country`, `zipcode`, `city`, `street`, `number`) VALUES (1, DEFAULT, NULL, 'Deutschland', '99869', 'Wangenheim', 'Grüne Gasse', '2');
+INSERT INTO `Address` (`addressId`, `createdAt`, `updatedAt`, `country`, `zipcode`, `city`, `street`, `number`) VALUES (2, DEFAULT, NULL, 'Deutschland', '99085', 'Erfurt', 'Leipziger Straße', '15b');
+INSERT INTO `Address` (`addressId`, `createdAt`, `updatedAt`, `country`, `zipcode`, `city`, `street`, `number`) VALUES (3, DEFAULT, NULL, 'Deutschland', '99867', 'Gotha', 'Geber Straße', '12');
+INSERT INTO `Address` (`addressId`, `createdAt`, `updatedAt`, `country`, `zipcode`, `city`, `street`, `number`) VALUES (4, DEFAULT, NULL, 'Deutschland', '99867', 'Bergenberg', 'Berg Straße', '8');
 
 COMMIT;
 
@@ -19,8 +19,8 @@ START TRANSACTION;
 USE `Tech4Kek`;
 INSERT INTO `Account` (`accountid`, `createdAt`, `updatedAt`, `firstname`, `lastname`, `email`, `password`, `role`, `addressId`) VALUES (1, DEFAULT, NULL, 'Lukas', 'Arnold', 'Jan204@t-online.de', 'Lolbob123', 1, 1);
 INSERT INTO `Account` (`accountid`, `createdAt`, `updatedAt`, `firstname`, `lastname`, `email`, `password`, `role`, `addressId`) VALUES (2, DEFAULT, NULL, 'Bernd', 'Benod', 'Biobernd@t-online.de', 'Bernand123', 0, 2);
-INSERT INTO `Account` (`accountid`, `createdAt`, `updatedAt`, `firstname`, `lastname`, `email`, `password`, `role`, `addressId`) VALUES (3, DEFAULT, NULL, 'Jochen', 'Cenold', 'Cachabo@t-online.de', '5155488', 0, 2);
-INSERT INTO `Account` (`accountid`, `createdAt`, `updatedAt`, `firstname`, `lastname`, `email`, `password`, `role`, `addressId`) VALUES (4, DEFAULT, NULL, 'Albert', 'Denold', 'dededod@t-online.de', 'Hululord23', 0, 2);
+INSERT INTO `Account` (`accountid`, `createdAt`, `updatedAt`, `firstname`, `lastname`, `email`, `password`, `role`, `addressId`) VALUES (3, DEFAULT, NULL, 'Jochen', 'Cenold', 'Cachabo@t-online.de', '5155488', 0, 3);
+INSERT INTO `Account` (`accountid`, `createdAt`, `updatedAt`, `firstname`, `lastname`, `email`, `password`, `role`, `addressId`) VALUES (4, DEFAULT, NULL, 'Albert', 'Denold', 'dededod@t-online.de', 'Hululord23', 0, 4);
 
 
 COMMIT;

@@ -61,6 +61,11 @@ public class Tech4kek {
             System.out.println(ComputerErgebnisse[i].getM_ComputerDetails().getM_DetailName());
         }
 
+        AccountFunctions AccF = new AccountFunctions();
+
+        AccF.Register("Jann204@t-online.de", "Penis1", "Lukas", "Arnold", "Penis2", "Penis3", 99869, "Penis4", "Penis5");
+
+
         //Hier ein beispiel wie man die Computer reinladen kann
         /*
         try {

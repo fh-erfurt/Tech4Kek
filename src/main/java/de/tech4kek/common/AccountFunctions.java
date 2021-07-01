@@ -1,6 +1,11 @@
 package de.tech4kek.common;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 import de.tech4kek.cart.Cart;
+import de.tech4kek.storage.DatabaseConnection;
 
 public class AccountFunctions {
 
@@ -41,9 +46,78 @@ public class AccountFunctions {
         return null;
     }
 
-    public boolean Register(String Email, String Password) {
+    public String Register(String email, String password, String firstname, String lastname, String country, String city, int zipcode, String street, String number) {
+        Connection theConnection = DatabaseConnection.getInstance().GetmyConnection();
+        //Schau ob acc mit der Email schon exestiert
 
-        return true;
+        try {
+            Statement myStmt = theConnection.createStatement();
+            String sqlprods = "select * from account WHERE Email = '" +email +"'";
+            ResultSet RSacc = myStmt.executeQuery(sqlprods);
+
+
+
+
+            while (RSacc.next()) {
+
+
+                if(RSacc.getString("Email").equals(email)){
+
+                    return "Der Acc ist bereits vorhanden";
+                }
+
+            }
+
+
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+        //Füge neuen Eintrag hinzu
+
+
+        int newAddressID = 0;
+        //Insert the address and get its id
+        try {
+            //Insert new address
+            Statement myStmt = theConnection.createStatement();
+            String TheInsert = "INSERT INTO address (Country, Zipcode, City, Street, Number) VALUES "
+                     +"(" +"'" +country +"'" +", " +zipcode +", " +"'" +city +"'" +", " +"'" +street +"'" +", " +"'" +number +"'" +")";
+            myStmt.executeUpdate(TheInsert);
+
+            // get the ID of the inserted row.
+            Statement myStmt2 = theConnection.createStatement();
+            String sqlprods = "select addressId from address Order By addressId ASC";
+            ResultSet RSaddress = myStmt2.executeQuery(sqlprods);
+
+            while (RSaddress.next()) {
+                newAddressID = RSaddress.getInt("addressId");
+            }
+
+
+        }
+        // Handle any errors that may have occurred.
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        //Insert the new acc
+        try {
+
+            Statement myStmt = theConnection.createStatement();
+            String TheInsert = "INSERT INTO account (FirstName, LastName, Email, Password, Role, addressId) VALUES "
+                    +"(" +"'" +firstname +"'" +", " +"'" +lastname +"'" +", " +"'" +email +"'" +", " +"'" +password +"'" +", " +0 +", " +newAddressID +")";
+            myStmt.executeUpdate(TheInsert);
+
+
+            return "Acc wurde erstellt";
+
+        }
+        // Handle any errors that may have occurred.
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return "Fehler";
     }
 
 
