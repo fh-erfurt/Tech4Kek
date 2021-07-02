@@ -41,15 +41,49 @@ public class AccountFunctions {
         System.out.println("Passwort wurde geändert");
     }*/
 
-    public Account Login(String Email, String Password) {
+    public Account Login(String email, String password) {
+        Connection theConnection = DatabaseConnection.getInstance().GetmyConnection();
 
+        //create an account object
+        Account Result = new Account();
+        // define a person to the object
+        Result.SetPerson(new Person());
+        // define a cart to the object
+        Result.setM_TheCart(new Cart());
+
+        try {
+            Statement myStmt = theConnection.createStatement();
+            String sqlprods = "select * from account WHERE Email = '" +email +"' AND Password = '" +password +"'";
+            ResultSet RSacc = myStmt.executeQuery(sqlprods);
+
+
+
+            while (RSacc.next()) {
+
+
+                if (RSacc.getString("Email").equals(email) && RSacc.getString("Password").equals(password)) {
+
+                    Result.SetEMail(RSacc.getString("Email"));
+                    Result.SetEMail(RSacc.getString("Password"));
+
+
+
+                    return Result;
+                }
+                else {
+                    System.out.println("Login fehlgeschlagen");
+                }
+            }
+
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
     public String Register(String email, String password, String firstname, String lastname, String country, String city, int zipcode, String street, String number) {
         Connection theConnection = DatabaseConnection.getInstance().GetmyConnection();
-        //Schau ob acc mit der Email schon exestiert
-
+        //Schau ob acc mit der Email schon existiert
         try {
             Statement myStmt = theConnection.createStatement();
             String sqlprods = "select * from account WHERE Email = '" +email +"'";
