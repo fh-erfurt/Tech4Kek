@@ -51,9 +51,11 @@ public class AccountFunctions {
         // define a cart to the object
         Result.setM_TheCart(new Cart());
 
+        Result.GetPerson().setM_TheAddress(new Address());
+
         try {
             Statement myStmt = theConnection.createStatement();
-            String sqlprods = "select * from account WHERE Email = '" +email +"' AND Password = '" +password +"'";
+            String sqlprods = "select * from account JOIN address on account.addressId = address.addressId WHERE Email ='" +email +"' AND Password = '" +password +"'";
             ResultSet RSacc = myStmt.executeQuery(sqlprods);
 
 
@@ -64,7 +66,16 @@ public class AccountFunctions {
                 if (RSacc.getString("Email").equals(email) && RSacc.getString("Password").equals(password)) {
 
                     Result.SetEMail(RSacc.getString("Email"));
-                    Result.SetEMail(RSacc.getString("Password"));
+                    Result.SetPassword(RSacc.getString("Password"));
+                    Result.GetPerson().setM_Firstname(RSacc.getString("FirstName"));
+                    Result.GetPerson().setM_Lastname(RSacc.getString("LastName"));
+                    Result.SetRole(RSacc.getInt("Role"));
+
+                    Result.GetPerson().getM_TheAddress().setM_ZIP(RSacc.getInt("Zipcode"));
+                    Result.GetPerson().getM_TheAddress().setM_Street(RSacc.getString("Street"));
+                    Result.GetPerson().getM_TheAddress().setM_HouseNr(RSacc.getString("Number"));
+                    Result.GetPerson().getM_TheAddress().setM_Country(RSacc.getString("Country"));
+                    Result.GetPerson().getM_TheAddress().setM_City(RSacc.getString("City"));
 
 
 

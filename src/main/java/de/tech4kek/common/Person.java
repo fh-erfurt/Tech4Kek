@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 public class Person {
     private String m_Lastname;
     private String m_Firstname;
-    private LocalDateTime m_Birthday;
     private Address m_TheAddress;
 
     //Set/Get Functions
@@ -18,10 +17,6 @@ public class Person {
         this.m_Firstname = m_Firstname;
     }
 
-    public void setM_Birthday(LocalDateTime m_Birthday) {
-        this.m_Birthday = m_Birthday;
-    }
-
     public void setM_TheAddress(Address m_TheAddress) {
         this.m_TheAddress = m_TheAddress;
     }
@@ -32,10 +27,6 @@ public class Person {
 
     public String getM_Firstname() {
         return m_Firstname;
-    }
-
-    public LocalDateTime getM_Birthday() {
-        return m_Birthday;
     }
 
     public Address getM_TheAddress() {

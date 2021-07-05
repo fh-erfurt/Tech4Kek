@@ -34,7 +34,7 @@ public class Tech4kek {
         Account TheACC = new Account();
         TheACC.SetEMail("Jan204@t-online.de");
         TheACC.SetPassword("Techkekerino123");
-        TheACC.SetRole(AccountRole.Customer);
+
         //Set Person Data from DB
         TheACC.SetPerson(ThePerson);
         TheACC.GetPerson().setM_Firstname("Arnold");
@@ -62,8 +62,13 @@ public class Tech4kek {
         }
 
         AccountFunctions AccF = new AccountFunctions();
+        Account LoginPerson = new Account();
+
 
         AccF.Register("Jann204@t-online.de", "Penis1", "Lukas", "Arnold", "Penis2", "Penis3", 99869, "Penis4", "Penis5");
+
+        LoginPerson = AccF.Login("Jan204@t-online.de","Lolbob123");
+
 
 
         //Hier ein beispiel wie man die Computer reinladen kann

@@ -3,7 +3,7 @@ import java.util.Scanner;
 import de.tech4kek.cart.Cart;
 
 public class Account {
-    private AccountRole m_Role; //Die Gespeicherte Enum Variable
+    private int m_Role; //Die Gespeicherte Enum Variable
     private String m_EMail;
     private String m_Password;
     private Person m_ThePerson;
@@ -42,9 +42,7 @@ public class Account {
     }
 
     //Set/Get Functions
-    public void SetRole(AccountRole m_Role) {
-        this.m_Role = m_Role;
-    }
+
 
     public void SetEMail(String m_EMail) {
         this.m_EMail = m_EMail;
@@ -58,8 +56,12 @@ public class Account {
         this.m_ThePerson = m_ThePerson;
     }
 
-    public AccountRole GetRole() {
+    public int GetRole() {
         return m_Role;
+    }
+
+    public void SetRole(int m_Role) {
+        this.m_Role = m_Role;
     }
 
     public String GetEMail() {
