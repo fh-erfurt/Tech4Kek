@@ -1,8 +1,11 @@
 package de.tech4kek.common.controller;
 
+import de.tech4kek.common.AccountFunctions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class NavigationController {
@@ -30,6 +33,22 @@ public class NavigationController {
         model.addAttribute("activePage", "login");
         return "login";
     }
+
+
+
+    @PostMapping("/loginform")
+    public String loginform(@ModelAttribute Logindata Login) {
+
+        String Email = Login.getEmail();
+        String Password = Login.getPw();
+
+
+
+
+        return "result";
+    }
+
+
 
     @GetMapping("/register")
     public String getRegister(Model model){

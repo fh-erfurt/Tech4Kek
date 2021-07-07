@@ -21,7 +21,6 @@ Für die überschrift die klasse in den header packen
 -->
 
 
-
             <div class="login">
                 <br>
                 <h1 class="display-4">Login</h1>
@@ -32,23 +31,25 @@ Für die überschrift die klasse in den header packen
                         <p class='errorMessage' id=phpError><?=$error?></p>
                         <? endif;?>
 
-                        <form method='post' name='loginForm' id=login-form>
+                        <form method='post' id='login-form' th:action="@{/loginform}" th:object="${logindata}">
                             <label for='email'>E-Mail</label> <br />
-                            <input type='email' name='email' id='email'>
-                            <span id='emailError'></span><br />
-                            <br />
-                            <label for='password'>Passwort</label> <br />
-                            <input type='password' name='password' id='password' /><br />
-                            <span id='passwordError'></span><br />
-                            <input type='submit' name='submitBtn' value='Login' class='loginButton'><br />
+                            <input type='email' th:field="*{email}" name='email' id='email' />
+                        <span id='emailError'></span><br />
+                        <br />
+                        <label for='password'>Passwort</label> <br />
+                        <input type='password' th:field="*{pw}" name='password' id='password' /><br />
+                        <span id='passwordError'></span><br />
+                        <input type='submit' name='submitBtn' value='Login' class='loginButton'><br />
                         </form>
                     </section>
 
 
 
 
+
                 </section>
             </div>
+
 
 
 
