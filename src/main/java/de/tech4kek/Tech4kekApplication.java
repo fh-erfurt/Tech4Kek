@@ -1,4 +1,4 @@
-package de.tech4kek.common;
+package de.tech4kek;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

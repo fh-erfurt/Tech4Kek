@@ -1,6 +1,10 @@
 package de.tech4kek.common.controller;
 
+import de.tech4kek.cart.Cart;
+import de.tech4kek.cart.Element;
 import de.tech4kek.common.AccountFunctions;
+import de.tech4kek.common.Person;
+import de.tech4kek.computer.Computer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,26 +32,14 @@ public class NavigationController {
         return "agb";
     }
 
-    @GetMapping("/login")
-    public String getLogin(Model model){
-        model.addAttribute("activePage", "login");
-        return "login";
+    @ModelAttribute("person")
+    public Person getCurrentCart(){
+        Person res = new Person();
+        res.setM_Firstname("My first name");
+        res.setM_Lastname("My last name");
+
+        return res;
     }
-
-
-
-    @PostMapping("/loginform")
-    public String loginform(@ModelAttribute Logindata Login) {
-
-        String Email = Login.getEmail();
-        String Password = Login.getPw();
-
-
-
-
-        return "result";
-    }
-
 
 
     @GetMapping("/register")
@@ -56,4 +48,28 @@ public class NavigationController {
         return "register";
     }
 
+    @GetMapping("/login")
+    public String getLogin(Model model){
+        model.addAttribute("activePage", "login");
+        return "login";
+    }
+
+    /**
+     * Provides an instance of the model {@link Logindata}.
+     * @return new instance of the model
+     */
+    @ModelAttribute("login")
+    public Logindata getLoginModel(){
+        Logindata res = new Logindata();
+        return res;
+    }
+
+    @PostMapping("/loginform")
+    public String loginforminputs(@ModelAttribute("login") Logindata login,  Model model) {
+        String Email = login.getEmail();
+        String Password = login.getPw();
+        model.addAttribute("login", login);
+
+        return "login";
+    }
 }

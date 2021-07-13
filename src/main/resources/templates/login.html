@@ -25,13 +25,21 @@ Für die überschrift die klasse in den header packen
                 <br>
                 <h1 class="display-4">Login</h1>
                 <section>
+                    <div th:object="${person}">
+                        <span th:text="*{m_Firstname}">Max</span>
+                        <span th:text="*{m_Lastname}">Mustermann</span>
+                    </div>
+
+
                     <!-- The Login Form -->
                     <section  class=loginstyle>
                         <? if(isset($error)): ?>
                         <p class='errorMessage' id=phpError><?=$error?></p>
                         <? endif;?>
 
-                        <form method='post' id='login-form' th:action="@{/loginform}" th:object="${logindata}">
+
+                        <!--/*@thymesVar id="login" type="de.tech4kek.common.controller.Logindata"*/-->
+                        <form method='post' id='login-form' th:action="@{/loginform}" th:object="${login}">
                             <label for='email'>E-Mail</label> <br />
                             <input type='email' th:field="*{email}" name='email' id='email' />
                         <span id='emailError'></span><br />

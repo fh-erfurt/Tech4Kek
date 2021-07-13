@@ -1,4 +1,6 @@
 package de.tech4kek.common.controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
 import java.io.Serializable;
 
 public class Logindata implements Serializable {
