@@ -3,7 +3,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Scanner;
+
 import de.tech4kek.cart.Cart;
 import de.tech4kek.storage.DatabaseConnection;
 
@@ -49,9 +49,9 @@ public class AccountFunctions {
         // define a person to the object
         Result.SetPerson(new Person());
         // define a cart to the object
-        Result.setM_TheCart(new Cart());
+        Result.setCart(new Cart());
 
-        Result.GetPerson().setM_TheAddress(new Address());
+        Result.GetPerson().setAddress(new Address());
 
         try {
             Statement myStmt = theConnection.createStatement();
@@ -67,15 +67,15 @@ public class AccountFunctions {
 
                     Result.SetEMail(RSacc.getString("Email"));
                     Result.SetPassword(RSacc.getString("Password"));
-                    Result.GetPerson().setM_Firstname(RSacc.getString("FirstName"));
-                    Result.GetPerson().setM_Lastname(RSacc.getString("LastName"));
+                    Result.GetPerson().setFirstname(RSacc.getString("FirstName"));
+                    Result.GetPerson().setLastname(RSacc.getString("LastName"));
                     Result.SetRole(RSacc.getInt("Role"));
 
-                    Result.GetPerson().getM_TheAddress().setM_ZIP(RSacc.getInt("Zipcode"));
-                    Result.GetPerson().getM_TheAddress().setM_Street(RSacc.getString("Street"));
-                    Result.GetPerson().getM_TheAddress().setM_HouseNr(RSacc.getString("Number"));
-                    Result.GetPerson().getM_TheAddress().setM_Country(RSacc.getString("Country"));
-                    Result.GetPerson().getM_TheAddress().setM_City(RSacc.getString("City"));
+                    Result.GetPerson().getAddress().setZip(RSacc.getInt("Zipcode"));
+                    Result.GetPerson().getAddress().setStreet(RSacc.getString("Street"));
+                    Result.GetPerson().getAddress().setHouseNumber(RSacc.getString("Number"));
+                    Result.GetPerson().getAddress().setCountry(RSacc.getString("Country"));
+                    Result.GetPerson().getAddress().setCity(RSacc.getString("City"));
 
 
 

@@ -1,52 +1,52 @@
 package de.tech4kek.common;
 
 public class Address {
-    private String m_Street;
-    private String m_HouseNr;
-    private int m_ZIP;
-    private String m_City;
-    private String m_Country;
+    private String street;
+    private String houseNumber;
+    private int zip;
+    private String city;
+    private String country;
 
     //Set/Get Functions
 
-    public void setM_Street(String m_Street) {
-        this.m_Street = m_Street;
+    public void setStreet(String street) {
+        this.street = street;
     }
 
-    public void setM_HouseNr(String m_HouseNr) {
-        this.m_HouseNr = m_HouseNr;
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
     }
 
-    public void setM_ZIP(int m_ZIP) {
-        this.m_ZIP = m_ZIP;
+    public void setZip(int zip) {
+        this.zip = zip;
     }
 
-    public void setM_City(String m_City) {
-        this.m_City = m_City;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public void setM_Country(String m_Country) {
-        this.m_Country = m_Country;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
-    public String getM_Street() {
-        return m_Street;
+    public String getStreet() {
+        return street;
     }
 
-    public String getM_HouseNr() {
-        return m_HouseNr;
+    public String getHouseNumber() {
+        return houseNumber;
     }
 
-    public int getM_ZIP() {
-        return m_ZIP;
+    public int getZip() {
+        return zip;
     }
 
-    public String getM_City() {
-        return m_City;
+    public String getCity() {
+        return city;
     }
 
-    public String getM_Country() {
-        return m_Country;
+    public String getCountry() {
+        return country;
     }
 
 

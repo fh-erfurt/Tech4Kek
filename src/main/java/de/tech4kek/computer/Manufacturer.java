@@ -3,32 +3,32 @@ package de.tech4kek.computer;
 import de.tech4kek.common.Address;
 
 public class Manufacturer {
-    private String m_ManName;
-    private Address m_AddressOfMan;
-    private String m_Agent;
+    private String manufacturerName;
+    private Address manufacturerAddress;
+    private String manufacturerAgent;
 
-    public String getM_ManName() {
-        return m_ManName;
+    public String getManufacturerName() {
+        return manufacturerName;
     }
 
-    public void setM_ManName(String m_ManName) {
-        this.m_ManName = m_ManName;
+    public void setManufacturerName(String manufacturerName) {
+        this.manufacturerName = manufacturerName;
     }
 
-    public Address getM_AddressOfMan() {
-        return m_AddressOfMan;
+    public Address getManufacturerAddress() {
+        return manufacturerAddress;
     }
 
-    public void setM_AddressOfMan(Address m_AddressOfMan) {
-        this.m_AddressOfMan = m_AddressOfMan;
+    public void setManufacturerAddress(Address manufacturerAddress) {
+        this.manufacturerAddress = manufacturerAddress;
     }
 
-    public String getM_Agent() {
-        return m_Agent;
+    public String getManufacturerAgent() {
+        return manufacturerAgent;
     }
 
-    public void setM_Agent(String m_Agent) {
-        this.m_Agent = m_Agent;
+    public void setManufacturerAgent(String manufacturerAgent) {
+        this.manufacturerAgent = manufacturerAgent;
     }
 
 }

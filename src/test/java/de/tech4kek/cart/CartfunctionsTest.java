@@ -1,10 +1,6 @@
 package de.tech4kek.cart;
 
 import de.tech4kek.computer.Computer;
-import de.tech4kek.computer.Computerdetails;
-import de.tech4kek.cart.Element;
-import de.tech4kek.cart.Cart;
-import de.tech4kek.cart.Cartfunctions;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -104,20 +100,20 @@ public class CartfunctionsTest {
 
     //Give them values
         int ElementToSearch = 5;
-        Element1.setM_Computer(new Computer());
-        Element1.getM_Computer().setM_ItemId(4);
-        Element2.setM_Computer(new Computer());
-        Element2.getM_Computer().setM_ItemId(5);
-        Element3.setM_Computer(new Computer());
-        Element3.getM_Computer().setM_ItemId(6);
+        Element1.setComputer(new Computer());
+        Element1.getComputer().setItemId(4);
+        Element2.setComputer(new Computer());
+        Element2.getComputer().setItemId(5);
+        Element3.setComputer(new Computer());
+        Element3.getComputer().setItemId(6);
 
-        TheCart.getM_firstElement().setM_nextElement(Element1);
-        TheCart.getM_firstElement().getM_nextElement().setM_nextElement(Element2);
-        TheCart.getM_firstElement().getM_nextElement().getM_nextElement().setM_nextElement(Element3);
+        TheCart.getFirstElement().setNextElement(Element1);
+        TheCart.getFirstElement().getNextElement().setNextElement(Element2);
+        TheCart.getFirstElement().getNextElement().getNextElement().setNextElement(Element3);
 
         Result= Cartfunctions.searchElement(TheCart, ElementToSearch);
 
-        Assertions.assertThat(Element2.getM_Computer().getM_ItemId()).isEqualTo(Result.getM_Computer().getM_ItemId());
+        Assertions.assertThat(Element2.getComputer().getItemId()).isEqualTo(Result.getComputer().getItemId());
 
     }
 }

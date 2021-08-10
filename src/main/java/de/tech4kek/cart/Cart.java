@@ -3,30 +3,29 @@ package de.tech4kek.cart;
 public class Cart {
 
     public Cart(){
-        m_firstElement = new Element();
-
-        m_firstElement.setM_nextElement(null);
-        m_firstElement.setM_Computer(null);
-        m_firstElement.setM_CountOfComputers(0);
-        m_ElementCount = 0;
+        firstElement = new Element();
+        firstElement.setNextElement(null);
+        firstElement.setComputer(null);
+        firstElement.setM_CountOfComputers(0);
+        elementCount = 0;
     }
 
-    private int m_ElementCount; //count of elements, anchor is the first element
-    private Element m_firstElement;
+    private int elementCount; //count of elements, anchor is the first element
+    private Element firstElement;
 
-    public Element getM_firstElement() {
-        return m_firstElement;
+    public Element getFirstElement() {
+        return firstElement;
     }
 
-    public void setM_firstElement(Element m_firstElement) {
-        this.m_firstElement = m_firstElement;
+    public void setFirstElement(Element firstElement) {
+        this.firstElement = firstElement;
     }
 
     public int getM_ElementCount() {
-        return m_ElementCount;
+        return elementCount;
     }
 
     public void setM_ElementCount(int m_ElementCount) {
-        this.m_ElementCount = m_ElementCount;
+        this.elementCount = m_ElementCount;
     }
 }

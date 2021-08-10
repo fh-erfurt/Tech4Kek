@@ -3,11 +3,11 @@ import java.util.Scanner;
 import de.tech4kek.cart.Cart;
 
 public class Account {
-    private int m_Role; //Die Gespeicherte Enum Variable
-    private String m_EMail;
-    private String m_Password;
-    private Person m_ThePerson;
-    private Cart m_TheCart;
+    private int role; //Die Gespeicherte Enum Variable
+    private String email;
+    private String password;
+    private Person person;
+    private Cart cart;
 
     //Functions
     public void ChangePW(Account ACC) {
@@ -17,10 +17,10 @@ public class Account {
         System.out.println("Geben Sie das alte PW ein:");
         altPW = Input.next();
 
-        if (altPW != ACC.m_Password) {
+        if (altPW != ACC.password) {
             while (isOK == false) {
                 isOK = true;
-                if (altPW != ACC.m_Password) {
+                if (altPW != ACC.password) {
                     System.out.println("PW ist nicht korrekt:");
                     isOK = false;
                     altPW = Input.next();
@@ -45,43 +45,43 @@ public class Account {
 
 
     public void SetEMail(String m_EMail) {
-        this.m_EMail = m_EMail;
+        this.email = m_EMail;
     }
 
     public void SetPassword(String m_Password) {
-        this.m_Password = m_Password;
+        this.password = m_Password;
     }
 
     public void SetPerson(Person m_ThePerson) {
-        this.m_ThePerson = m_ThePerson;
+        this.person = m_ThePerson;
     }
 
     public int GetRole() {
-        return m_Role;
+        return role;
     }
 
     public void SetRole(int m_Role) {
-        this.m_Role = m_Role;
+        this.role = m_Role;
     }
 
     public String GetEMail() {
-        return m_EMail;
+        return email;
     }
 
     public String GetPassword() {
-        return m_Password;
+        return password;
     }
 
     public Person GetPerson() {
-        return m_ThePerson;
+        return person;
     }
 
-    public void setM_TheCart(Cart TheCart){
-        m_TheCart = TheCart;
+    public void setCart(Cart TheCart){
+        cart = TheCart;
     }
 
-    public Cart getM_TheCart(){
-        return m_TheCart;
+    public Cart getCart(){
+        return cart;
     }
 
 }

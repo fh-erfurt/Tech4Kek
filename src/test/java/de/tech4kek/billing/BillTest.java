@@ -5,7 +5,6 @@ import de.tech4kek.common.Account;
 import de.tech4kek.computer.Computer;
 import de.tech4kek.computer.Computerdetails;
 import de.tech4kek.cart.Cart;
-import de.tech4kek.billing.Bill;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -35,25 +34,25 @@ public class BillTest {
         //Computer2Details.setM_Price(200);
         //Computer3Details.setM_Price(400);
 
-        Computer1.setM_ComputerDetails(Computer1Details);
-        Computer2.setM_ComputerDetails(Computer2Details);
-        Computer3.setM_ComputerDetails(Computer3Details);
+        Computer1.setComputerdetails(Computer1Details);
+        Computer2.setComputerdetails(Computer2Details);
+        Computer3.setComputerdetails(Computer3Details);
 
-        Element1.setM_Computer(Computer1);
-        Element2.setM_Computer(Computer2);
-        Element3.setM_Computer(Computer3);
+        Element1.setComputer(Computer1);
+        Element2.setComputer(Computer2);
+        Element3.setComputer(Computer3);
 
         Element1.setM_CountOfComputers(3);
         Element2.setM_CountOfComputers(2);
         Element3.setM_CountOfComputers(5);
 
-        TheCart.getM_firstElement().setM_nextElement(Element1);
-        TheCart.getM_firstElement().getM_nextElement().setM_nextElement(Element2);
-        TheCart.getM_firstElement().getM_nextElement().getM_nextElement().setM_nextElement(Element3);
+        TheCart.getFirstElement().setNextElement(Element1);
+        TheCart.getFirstElement().getNextElement().setNextElement(Element2);
+        TheCart.getFirstElement().getNextElement().getNextElement().setNextElement(Element3);
 
         //Call function
-        Bill TheBill = new Bill(TheCart, TheAcc, 25, 16);
-        Result = TheBill.getM_Price();
+        //Bill TheBill = new Bill(TheCart, TheAcc, 25, 16);
+        //Result = TheBill.getPrice();
 
         //Compare values
         Assertions.assertThat(Result).isEqualTo(2871.0);

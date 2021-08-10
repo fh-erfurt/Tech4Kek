@@ -1,14 +1,11 @@
 package de.tech4kek.common.controller;
 
 import de.tech4kek.common.Person;
-import de.tech4kek.common.controller.Logindata;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-
 
 
 //Controller for all things on the login Page
@@ -37,8 +34,8 @@ public class LoginController{
     @ModelAttribute("person")
     public Person getCurrentCart(){
         Person res = new Person();
-        res.setM_Firstname("My first name");
-        res.setM_Lastname("My last name");
+        res.setFirstname("My first name");
+        res.setLastname("My last name");
 
         return res;
     }

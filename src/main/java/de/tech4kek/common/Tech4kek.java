@@ -2,9 +2,6 @@ package de.tech4kek.common;
 import de.tech4kek.computer.*;
 import de.tech4kek.storage.DatabaseConnection;
 
-import de.tech4kek.cart.*;
-import de.tech4kek.billing.*;
-
 import java.sql.*;
 
 //test
@@ -37,7 +34,7 @@ public class Tech4kek {
 
         //Set Person Data from DB
         TheACC.SetPerson(ThePerson);
-        TheACC.GetPerson().setM_Firstname("Arnold");
+        TheACC.GetPerson().setFirstname("Arnold");
 
         //System.out.println(TheACC.GetEMail());
 
@@ -58,7 +55,7 @@ public class Tech4kek {
         Computer ComputerErgebnisse[] = TheFunctions.searchComputer("Xtreme");
         for (int i = 0; i < ComputerErgebnisse.length; i++) {
 
-            System.out.println(ComputerErgebnisse[i].getM_ComputerDetails().getM_DetailName());
+            System.out.println(ComputerErgebnisse[i].getComputerdetails().getDetailName());
         }
 
         AccountFunctions AccF = new AccountFunctions();

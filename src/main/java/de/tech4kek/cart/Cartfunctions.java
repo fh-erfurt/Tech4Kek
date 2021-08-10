@@ -1,7 +1,5 @@
 package de.tech4kek.cart;
 
-import de.tech4kek.computer.Computer;
-
 public class Cartfunctions {
 /*
     public static Element addElement(Cart TheCart, Computer TheComputer, int number) {
@@ -60,14 +58,14 @@ public class Cartfunctions {
 
  */
     public static Element searchElement(Cart TheCart, int ItemID){ //search for ItemID
-        Element Anchor = TheCart.getM_firstElement();
+        Element Anchor = TheCart.getFirstElement();
         Element Placeholder = null;
         Boolean isFound = false;
 
-        while (Anchor.getM_nextElement() != null){
-            Anchor = Anchor.getM_nextElement();
+        while (Anchor.getNextElement() != null){
+            Anchor = Anchor.getNextElement();
 
-            if(Anchor.getM_Computer().getM_ItemId() == ItemID){
+            if(Anchor.getComputer().getItemId() == ItemID){
                 Placeholder = Anchor;
                 isFound = true;
                 System.out.println("Element Gefunden");

@@ -1,42 +1,42 @@
 package de.tech4kek.computer;
 
 public class Computer {
-    private int m_ItemId;
-    private Computerdetails m_ComputerDetails;
-    private Manufacturer m_ManufacturerOfComputer;
-    private Category m_Category;
-    private Computer m_NextComputer;
+    private int itemId;
+    private Computerdetails computerdetails;
+    private Manufacturer manufacturerOfComputer;
+    private Category category;
+    private Computer nextComputer;
 
-    public int getM_ItemId() {
-        return m_ItemId;
+    public int getItemId() {
+        return itemId;
     }
 
-    public void setM_ItemId(int m_ItemId) {
-        this.m_ItemId = m_ItemId;
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
     }
 
-    public Computerdetails getM_ComputerDetails() {
-        return m_ComputerDetails;
+    public Computerdetails getComputerdetails() {
+        return computerdetails;
     }
 
-    public void setM_ComputerDetails(Computerdetails m_ComputerDetails) {
-        this.m_ComputerDetails = m_ComputerDetails;
+    public void setComputerdetails(Computerdetails computerdetails) {
+        this.computerdetails = computerdetails;
     }
 
-    public Manufacturer getM_ManufacturerOfComputer() {
-        return m_ManufacturerOfComputer;
+    public Manufacturer getManufacturerOfComputer() {
+        return manufacturerOfComputer;
     }
 
-    public void setM_ManufacturerOfComputer(Manufacturer m_ManufacturerOfComputer) {
-        this.m_ManufacturerOfComputer = m_ManufacturerOfComputer;
+    public void setManufacturerOfComputer(Manufacturer manufacturerOfComputer) {
+        this.manufacturerOfComputer = manufacturerOfComputer;
     }
 
-    public Computer getM_NextComputer() {
-        return m_NextComputer;
+    public Computer getNextComputer() {
+        return nextComputer;
     }
 
-    public void setM_NextComputer(Computer m_NextComputer) {
-        this.m_NextComputer = m_NextComputer;
+    public void setNextComputer(Computer nextComputer) {
+        this.nextComputer = nextComputer;
     }
 }
 
