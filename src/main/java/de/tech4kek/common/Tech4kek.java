@@ -44,12 +44,10 @@ public class Tech4kek {
         //Zum Rausfinden wie viele Produkte wir haben
 
 
-        //Computer ComputerListe[] = TheFunctions.loadComputer();
+/*        Computer ComputerListe[] = TheFunctions.loadComputer();
 
-
-
-        //System.out.println(ComputerListe[0].getM_ComputerDetails().getM_DetailName());
-        //System.out.println(ComputerListe[1].getM_ComputerDetails().getM_DetailName());
+        System.out.println(ComputerListe[0].getComputerdetails().getDetailName());
+        System.out.println(ComputerListe[1].getComputerdetails().getDetailName());*/
 
        //Computer Suche test
         Computer ComputerErgebnisse[] = TheFunctions.searchComputer("Xtreme");
