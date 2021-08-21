@@ -1,11 +1,19 @@
 package de.tech4kek.common.controller;
 
-import de.tech4kek.common.Person;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import de.tech4kek.common.AccountFunctions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+
+
 
 
 //Controller for all things on the login Page
@@ -30,27 +38,38 @@ public class LoginController{
         return res;
     }
 
-
-    @ModelAttribute("person")
-    public Person getCurrentCart(){
-        Person res = new Person();
-        res.setFirstname("My first name");
-        res.setLastname("My last name");
-
+    @ModelAttribute("error")
+    public Errordata getErrorModel(){
+        Errordata res = new Errordata();
         return res;
     }
 
-
-
     @PostMapping("/loginform")
-    public String loginforminputs(@ModelAttribute("login") Logindata login,  Model model) {
+    public String loginforminputs(@ModelAttribute("login") Logindata login,  Model model, HttpServletResponse response) {
         String Email = login.getEmail();
         String Password = login.getPw();
-        model.addAttribute("login", login);
 
+
+        AccountFunctions Loginfunction = new AccountFunctions();
+       Errordata errormsg = new Errordata();
+
+       //If login data is correct, go to the index page
+        if(Loginfunction.Login(Email, Password) != null){
+
+            Cookie cookie = new Cookie("LoginEmail", Email);
+            cookie.setMaxAge(3600 * 24 * 30);
+            Cookie cookie2 = new Cookie("LoginPW", Password);
+            cookie2.setMaxAge(3600 * 24 * 30);
+
+            response.addCookie(cookie);
+            response.addCookie(cookie2);
+            return"index";
+        }
+
+        model.addAttribute("login", login);
+        //If login data is wrong, reload login page
         return "login";
     }
-
 
 
 

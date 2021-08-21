@@ -14,7 +14,7 @@
 <main role="main" class="flex-shrink-0">
     <div class="container mt-5">
         <div class="jumbotron">
-            <h1 class="display-4">products</h1>
+            <h1 class="display-4">Unsere Produkte</h1>
         </div>
 
         <div th:each="Computer: ${ComputerListe}" class="jumbotron">
@@ -22,7 +22,7 @@
             <p th:text="${Computer.getComputerdetails().getCpuName()}">Name</p>
             <p th:text="${Computer.getComputerdetails().getGpu()}">Name</p>
             <p th:text="${Computer.getComputerdetails().getPrice()}">Name</p>
-            <a th:href="@{/item}">Jezt Kaufen</a>
+            <a th:href="@{/item}">Jetzt Kaufen</a>
         </div>
     </div>
 

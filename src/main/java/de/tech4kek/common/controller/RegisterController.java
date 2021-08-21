@@ -38,7 +38,7 @@ public class RegisterController{
         String Email = register.getEmail();
         String Password = register.getPw();
         model.addAttribute("register", register);
-
+        System.out.println(Email);
         return "register";
     }
 
