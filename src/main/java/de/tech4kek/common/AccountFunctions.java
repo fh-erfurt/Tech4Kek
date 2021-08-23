@@ -107,7 +107,7 @@ public class AccountFunctions {
 
 
                 if(RSacc.getString("Email").equals(email)){
-
+                    // if acc allready exists
                     return null;
                 }
 
