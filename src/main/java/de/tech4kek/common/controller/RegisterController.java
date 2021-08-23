@@ -36,7 +36,7 @@ public class RegisterController{
 
 
     @PostMapping("/registerform")
-    public String registerforminputs(@ModelAttribute("register") Registerdata register,  Model model) {
+    public String registerforminputs(@ModelAttribute("register") Registerdata register,  Model model, HttpServletResponse response) {
         String email = register.getEmail();
         String password = register.getPassword();
         String password2 = register.getPassword2();
