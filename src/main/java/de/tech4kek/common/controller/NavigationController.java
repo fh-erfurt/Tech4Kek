@@ -9,13 +9,15 @@ import de.tech4kek.computer.Computer;
 import de.tech4kek.computer.ComputerFunctions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
 
 
 @Controller
 public class NavigationController {
+
+
 
     @GetMapping("/products")
     public String getProducts(Model model){
@@ -46,12 +48,27 @@ public class NavigationController {
         return "agb";
     }
 
-    @GetMapping("/item")
-    public String getItem(Model model){
-        model.addAttribute("activePage", "item");
-        return "item";
-    }
+    @RequestMapping(value = "/item", method=RequestMethod.GET)
+    public String item(Model model, @RequestParam(value="id") Integer id) {
+            model.addAttribute("id", id);
+            System.out.println(id);
 
+        ComputerFunctions TheFunctions = new ComputerFunctions();
+        Computer ComputerListe[] = TheFunctions.loadComputer();
+
+            Computer wantedComputer = null;
+
+            for (Computer computer : ComputerListe) {
+                if (computer.getItemId() == id){
+                    wantedComputer = computer;
+                }
+            }
+            model.addAttribute("computer", wantedComputer);
+
+
+
+            return "item";
+        }
 
 
 }

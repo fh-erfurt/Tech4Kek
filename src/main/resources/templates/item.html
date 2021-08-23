@@ -2,11 +2,44 @@
 <html lang="en" xmlns:th="http://thymeleaf.org" class="h-100">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Spring MVC</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link th:href="@{styles/main.css}" rel="stylesheet"/>
 
   <div th:replace="~{fragments/header :: header}"></div>
 </head>
 <body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-5">
+                <img th:src="@{${'/pictures/products/'+computer.getItemId()+'.jpg'}}" class="float-right" style="width: 200px">
+        </div>
+
+        <div class="col-7">
+            <h3 th:text="${computer.getComputerdetails().getDetailName()}"></h3>
+            <div th:text="'ID: '+${computer.getItemId}">Search Query</div>
+            <div th:text="'CPU: '+${computer.getComputerdetails().getCpuName()}"></div>
+            <div th:text="'CPU Takt: '+${computer.getComputerdetails().getCpuClock()}+'Ghz'"></div>
+            <div th:text="'CPU Kerne: '+${computer.getComputerdetails().getCpuCoreAmount()}"></div>
+            <div th:text="'CPU Threads: '+${computer.getComputerdetails().getCpuThreadAmount()}"></div>
+            <div th:text="'GPU: '+${computer.getComputerdetails().getGpu()}"></div>
+            <div th:text="'Grafikspeichergröße: '+${computer.getComputerdetails().getVramAmount()}+'Gb'"></div>
+            <div th:text="'GPU Takt: '+${computer.getComputerdetails().getGpuClock()}+'Mhz'"></div>
+            <div th:text="'Arbeitsspeicher: '+${computer.getComputerdetails().getRamName()}"></div>
+            <div th:text="'Arbeitsspeichergröße: '+${computer.getComputerdetails().getRamSize()}+'Gb'"></div>
+            <div th:text="'Beschreibung: '+${computer.getComputerdetails().getDescription()}"></div>
+
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
 
 </body>
 </html>
