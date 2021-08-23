@@ -92,7 +92,7 @@ public class AccountFunctions {
         return null;
     }
 
-    public String Register(String email, String password, String firstname, String lastname, String country, String city, int zipcode, String street, String number) {
+    public Account Register(String email, String password, String firstname, String lastname, String country, String city, int zipcode, String street, String number) {
         Connection theConnection = DatabaseConnection.getInstance().GetmyConnection();
         //Schau ob acc mit der Email schon existiert
         try {
@@ -108,7 +108,7 @@ public class AccountFunctions {
 
                 if(RSacc.getString("Email").equals(email)){
 
-                    return "Der Acc ist bereits vorhanden";
+                    return null;
                 }
 
             }
@@ -153,8 +153,9 @@ public class AccountFunctions {
                     +"(" +"'" +firstname +"'" +", " +"'" +lastname +"'" +", " +"'" +email +"'" +", " +"'" +password +"'" +", " +0 +", " +newAddressID +")";
             myStmt.executeUpdate(TheInsert);
 
+            Account result = Login(email, password);
 
-            return "Acc wurde erstellt";
+            return result;
 
         }
         // Handle any errors that may have occurred.
@@ -162,7 +163,7 @@ public class AccountFunctions {
             e.printStackTrace();
         }
 
-        return "Fehler";
+        return null;
     }
 
 
