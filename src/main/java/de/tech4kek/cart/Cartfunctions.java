@@ -16,6 +16,7 @@ public class Cartfunctions {
         }
 
         //moves trough all elements
+
         while (Anchor.getNextElement() != null){
             Anchor = Anchor.getNextElement();
             if(Anchor.getComputer() == TheComputer){
@@ -26,6 +27,7 @@ public class Cartfunctions {
                 return Anchor; //if pc is already existing
             };
         }
+
         //creates new pc and sets successor null
         Element NewElement = new Element();
         NewElement.setNextElement(null);
@@ -41,6 +43,22 @@ public class Cartfunctions {
     };
 
     //Is for chaneging the stockcount of an Element in the Cart List
+
+
+    //Turns the Cart to an Array
+    public static Element[] makeArray(Cart TheCart) {
+
+        Element Anchor = TheCart.getFirstElement();
+
+        int counter = 0;
+        while (Anchor.getNextElement() != null){
+            Anchor = Anchor.getNextElement();
+            counter += 1;
+        }
+
+        return null;
+    }
+
     public static Element delNumberOfElements(Cart TheCart, Computer TheComputer, int number){
         Element Anchor = TheCart.getFirstElement();
 

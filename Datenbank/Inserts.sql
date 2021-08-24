@@ -104,8 +104,8 @@ INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, 
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (38, DEFAULT, NULL, 'pcinfo', 'ramname', 'Razer 5000xTREME');
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (39, DEFAULT, NULL, 'pcinfo', 'ramsize', '16');
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (40, DEFAULT, NULL, 'pcinfo', 'price', '1749.99');
-INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (41, DEFAULT, NULL, 'pcinfo', 'pcmanuaddressid', '5');
-INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (42, DEFAULT, NULL, 'pcinfo', 'pcmanuaccid', '5');
+INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (41, DEFAULT, NULL, 'pcinfo', 'pcmanuaddressid', '3');
+INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (42, DEFAULT, NULL, 'pcinfo', 'pcmanuaccid', '3');
 
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (43, DEFAULT, NULL, 'pcinfo', 'detailname', 'ASUS ROG Strix G15');
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (44, DEFAULT, NULL, 'pcinfo', 'description', 'A Asus Laptop for Fortnite Players');
@@ -119,8 +119,8 @@ INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, 
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (52, DEFAULT, NULL, 'pcinfo', 'ramname', 'Corsair 5000 Vengence xTREME');
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (53, DEFAULT, NULL, 'pcinfo', 'ramsize', '16');
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (54, DEFAULT, NULL, 'pcinfo', 'price', '899.00');
-INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (55, DEFAULT, NULL, 'pcinfo', 'pcmanuaddressid', '6');
-INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (56, DEFAULT, NULL, 'pcinfo', 'pcmanuaccid', '6');
+INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (55, DEFAULT, NULL, 'pcinfo', 'pcmanuaddressid', '2');
+INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (56, DEFAULT, NULL, 'pcinfo', 'pcmanuaccid', '2');
 
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (57, DEFAULT, NULL, 'pcinfo', 'detailname', 'Abra A5');
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (58, DEFAULT, NULL, 'pcinfo', 'description', 'A Laptop for Fortnite Players');
@@ -134,8 +134,8 @@ INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, 
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (66, DEFAULT, NULL, 'pcinfo', 'ramname', 'Corsair 5000xTREME');
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (67, DEFAULT, NULL, 'pcinfo', 'ramsize', '32');
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (68, DEFAULT, NULL, 'pcinfo', 'price', '899.99');
-INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (69, DEFAULT, NULL, 'pcinfo', 'pcmanuaddressid', '7');
-INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (70, DEFAULT, NULL, 'pcinfo', 'pcmanuaccid', '7');
+INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (69, DEFAULT, NULL, 'pcinfo', 'pcmanuaddressid', '1');
+INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (70, DEFAULT, NULL, 'pcinfo', 'pcmanuaccid', '1');
 
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (71, DEFAULT, NULL, 'pcinfo', 'detailname', 'Abra A51');
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (72, DEFAULT, NULL, 'pcinfo', 'description', 'A Laptop for Fortnite Players');
@@ -149,8 +149,8 @@ INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, 
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (80, DEFAULT, NULL, 'pcinfo', 'ramname', 'Corsair 5000xTREME');
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (81, DEFAULT, NULL, 'pcinfo', 'ramsize', '32');
 INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (82, DEFAULT, NULL, 'pcinfo', 'price', '1200.00');
-INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (83, DEFAULT, NULL, 'pcinfo', 'pcmanuaddressid', '7');
-INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (84, DEFAULT, NULL, 'pcinfo', 'pcmanuaccid', '7');
+INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (83, DEFAULT, NULL, 'pcinfo', 'pcmanuaddressid', '3');
+INSERT INTO `Property` (`propertyId`, `createdAt`, `updatedAt`, `type`, `name`, `value`) VALUES (84, DEFAULT, NULL, 'pcinfo', 'pcmanuaccid', '3');
 -- Und so weiter halt
 
 COMMIT;

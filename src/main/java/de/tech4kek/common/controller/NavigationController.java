@@ -94,6 +94,7 @@ public class NavigationController {
         }
         System.out.println(id);
 
+
         element.setComputer(wantedComputer);
         shoppingCart.setFirstElement(element);
 

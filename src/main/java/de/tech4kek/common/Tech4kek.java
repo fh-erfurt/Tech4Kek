@@ -50,6 +50,9 @@ public class Tech4kek {
 
         System.out.println(ComputerListe[0].getComputerdetails().getDetailName());
         System.out.println(ComputerListe[1].getComputerdetails().getDetailName());
+        System.out.println(ComputerListe[2].getComputerdetails().getDetailName());
+        System.out.println(ComputerListe[3].getComputerdetails().getDetailName());
+        System.out.println(ComputerListe[4].getComputerdetails().getDetailName());
 
        //Computer Suche test
         Computer ComputerErgebnisse[] = TheFunctions.searchComputer("Xtreme");
