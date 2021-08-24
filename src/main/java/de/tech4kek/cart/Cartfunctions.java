@@ -19,7 +19,11 @@ public class Cartfunctions {
         while (Anchor.getNextElement() != null){
             Anchor = Anchor.getNextElement();
             if(Anchor.getComputer() == TheComputer){
-                return null; //false if pc is already existing
+
+                Anchor.setM_CountOfComputers(Anchor.getM_CountOfComputers()+number);
+                TheComputer.setOnStock(TheComputer.getOnStock()-number);
+
+                return Anchor; //if pc is already existing
             };
         }
         //creates new pc and sets successor null
