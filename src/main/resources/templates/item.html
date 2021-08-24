@@ -31,6 +31,14 @@
             <div th:text="'Arbeitsspeichergröße: '+${computer.getComputerdetails().getRamSize()}+'Gb'"></div>
             <div th:text="'Beschreibung: '+${computer.getComputerdetails().getDescription()}"></div>
 
+            <form action="#" th:action="@{/item}" th:object="${itemData}" method="post">
+
+                <input type="hidden"  th:value="${computer.getItemId}" name="id" id="id" />
+                <input  type="submit" value="in den Warenkorb" />
+
+            </form>
+
+
         </div>
     </div>
 

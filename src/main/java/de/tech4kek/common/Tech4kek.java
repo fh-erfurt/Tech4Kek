@@ -62,7 +62,7 @@ public class Tech4kek {
         Account LoginPerson = new Account();
 
 
-        AccF.Register("Jann204@t-online.de", "Penis1", "Lukas", "Arnold", "Penis2", "Penis3", 99869, "Penis4", "Penis5");
+        //AccF.Register("Jann204@t-online.de", "Penis1", "Lukas", "Arnold", "Penis2", "Penis3", 99869, "Penis4", "Penis5");
 
         LoginPerson = AccF.Login("Jan204@t-online.de","Lolbob123");
 

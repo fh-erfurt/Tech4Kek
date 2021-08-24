@@ -31,6 +31,10 @@
             <li class="nav-item" th:class="${activePage == 'agb'} ? 'nav-item active' : 'nav-item'">
                 <a class="nav-link" th:href="@{/agb}">AGB</a>
             </li>
+            <!--            <li class="nav-item" th:class="${#httpServletRequest.requestURI.contains('shoppingCart')} ? 'nav-link active' : 'nav-link'">-->
+            <li class="nav-item" th:class="${activePage == 'shoppingCart'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/shoppingCart}">Warenkorb</a>
+            </li>
             <!--            <li class="nav-item" th:class="${#httpServletRequest.requestURI.contains('login')} ? 'nav-link active' : 'nav-link'">-->
             <li class="nav-item" th:class="${activePage == 'login'} ? 'nav-item active' : 'nav-item'">
                 <a class="nav-link" th:href="@{/login}">Login</a>

@@ -27,13 +27,9 @@
                     <p th:text="${Computer.getComputerdetails().getPrice()}">Name</p>
                     <a th:href="@{/item(id=${Computer.getItemId()})}">Jezt Kaufen</a>
                 </div>
-        </div>
-
-
+            </div>
         </div>
     </div>
-
-
 </main>
 
 <div th:replace="~{fragments/footer :: footer}"></div>
