@@ -56,7 +56,23 @@ public class Cartfunctions {
             counter += 1;
         }
 
-        return null;
+        Element CartArray[] = new Element[counter];
+
+
+        Anchor = TheCart.getFirstElement();
+
+        int counter2 = 0;
+        while (Anchor.getNextElement() != null){
+
+           CartArray[counter2].setM_CountOfComputers(Anchor.getM_CountOfComputers());
+           CartArray[counter2].setNextElement(Anchor.getNextElement());
+           CartArray[counter2].setComputer(Anchor.getComputer());
+
+            Anchor = Anchor.getNextElement();
+            counter2 +=1;
+        }
+
+        return CartArray;
     }
 
     public static Element delNumberOfElements(Cart TheCart, Computer TheComputer, int number){
