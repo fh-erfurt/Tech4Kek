@@ -1,31 +1,25 @@
 package de.tech4kek.common.controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.io.Serializable;
 
 public class Registerdata implements Serializable {
     private String email;
-    private String pw;
-    private String pw2;
+    private String password;
+    private String password2;
     private String firstname;
     private String lastname;
     private String country;
     private String city;
-    private int number;
+    private String number;
     private String street;
-    private String houseNmbr;
-
+    private String houseNumber;
 
     public Registerdata(){
-
-    }
-
-    public Registerdata(String pw, String email){
-        this.pw = pw;
+        this.password = password;
         this.email = email;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
@@ -41,16 +35,16 @@ public class Registerdata implements Serializable {
         return firstname;
     }
 
-    public String getHouseNmbr() {
-        return houseNmbr;
+    public String getHouseNumber() {
+        return houseNumber;
     }
 
     public String getLastname() {
         return lastname;
     }
 
-    public String getPw2() {
-        return pw2;
+    public String getPassword2() {
+        return password2;
     }
 
     public String getStreet() {
@@ -61,16 +55,16 @@ public class Registerdata implements Serializable {
         return email;
     }
 
-    public String getPw() {
-        return pw;
+    public String getPassword() {
+        return password;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public void setPw(String pw) {
-        this.pw = pw;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setCity(String city) {
@@ -85,20 +79,20 @@ public class Registerdata implements Serializable {
         this.firstname = firstname;
     }
 
-    public void setHouseNmbr(String houseNmbr) {
-        this.houseNmbr = houseNmbr;
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
     }
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
-    public void setPw2(String pw2) {
-        this.pw2 = pw2;
+    public void setPassword2(String password2) {
+        this.password2 = password2;
     }
 
     public void setStreet(String street) {

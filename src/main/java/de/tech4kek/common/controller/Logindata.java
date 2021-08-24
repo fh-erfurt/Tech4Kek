@@ -9,10 +9,6 @@ public class Logindata implements Serializable {
 
 
     public Logindata(){
-
-    }
-
-    public Logindata(String pw, String email){
         this.pw = pw;
         this.email = email;
     }

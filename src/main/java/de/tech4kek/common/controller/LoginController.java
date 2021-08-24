@@ -56,13 +56,13 @@ public class LoginController{
        //If login data is correct, go to the index page
         if(Loginfunction.Login(Email, Password) != null){
 
-            Cookie cookie = new Cookie("LoginEmail", Email);
-            cookie.setMaxAge(3600 * 24 * 30);
-            Cookie cookie2 = new Cookie("LoginPW", Password);
-            cookie2.setMaxAge(3600 * 24 * 30);
+            Cookie cookieEmail = new Cookie("LoginEmail", Email);
+            cookieEmail.setMaxAge(3600 * 24 * 30);
+            Cookie cookiePassword = new Cookie("LoginPW", Password);
+            cookiePassword.setMaxAge(3600 * 24 * 30);
 
-            response.addCookie(cookie);
-            response.addCookie(cookie2);
+            response.addCookie(cookieEmail);
+            response.addCookie(cookiePassword);
             return"index";
         }
 

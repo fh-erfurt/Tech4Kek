@@ -51,6 +51,7 @@ public class ComputerFunctions {
                 TheArray[counter].getManufacturerOfComputer().setManufacturerAddress(new Address());
                 TheArray[counter].setComputerdetails(new Computerdetails());
                 TheArray[counter].setItemId(RSProducts.getInt("productId"));
+                TheArray[counter].setOnStock(RSProducts.getInt("OnStock"));
 
                 counter= counter +1;
             }

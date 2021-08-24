@@ -5,7 +5,17 @@ public class Computer {
     private Computerdetails computerdetails;
     private Manufacturer manufacturerOfComputer;
     private Category category;
+    private int OnStock;
+
     private Computer nextComputer;
+
+    public int getOnStock() {
+        return OnStock;
+    }
+
+    public void setOnStock(int onStock) {
+        OnStock = onStock;
+    }
 
     public int getItemId() {
         return itemId;

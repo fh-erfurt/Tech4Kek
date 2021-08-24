@@ -92,7 +92,7 @@ public class AccountFunctions {
         return null;
     }
 
-    public Account Register(String email, String password, String firstname, String lastname, String country, String city, int zipcode, String street, String number) {
+    public Account Register(String email, String password, String firstname, String lastname, String country, String city, String zipcode, String street, String number) {
         Connection theConnection = DatabaseConnection.getInstance().GetmyConnection();
         //Schau ob acc mit der Email schon existiert
         try {
@@ -107,7 +107,7 @@ public class AccountFunctions {
 
 
                 if(RSacc.getString("Email").equals(email)){
-
+                    // if acc allready exists
                     return null;
                 }
 
