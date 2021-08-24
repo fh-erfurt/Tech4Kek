@@ -1,4 +1,7 @@
 package de.tech4kek.common;
+import de.tech4kek.cart.Cart;
+import de.tech4kek.cart.Cartfunctions;
+import de.tech4kek.cart.Element;
 import de.tech4kek.computer.*;
 import de.tech4kek.storage.DatabaseConnection;
 
@@ -26,15 +29,15 @@ public class Tech4kek {
         // So macht man die connection:   (klasse muss natürlich importet sein)
         Connection theConnection = DatabaseConnection.getInstance().GetmyConnection();
 
-        Computer PC = new Computer();
-        Person ThePerson = new Person();
-        Account TheACC = new Account();
-        TheACC.SetEMail("Jan204@t-online.de");
-        TheACC.SetPassword("Techkekerino123");
+        //Computer PC = new Computer();
+        //Person ThePerson = new Person();
+        //Account TheACC = new Account();
+        //TheACC.SetEMail("Jan204@t-online.de");
+        //TheACC.SetPassword("Techkekerino123");
 
         //Set Person Data from DB
-        TheACC.SetPerson(ThePerson);
-        TheACC.GetPerson().setFirstname("Arnold");
+        //TheACC.SetPerson(ThePerson);
+        //TheACC.GetPerson().setFirstname("Arnold");
 
         //System.out.println(TheACC.GetEMail());
 
@@ -46,15 +49,24 @@ public class Tech4kek {
 
         Computer ComputerListe[] = TheFunctions.loadComputer();
 
+        //System.out.println(ComputerListe[0].getComputerdetails().getDetailName());
+
+        Cartfunctions TheCartfunctions = new Cartfunctions();
+
+        Cart ShoppingCart = new Cart();
+
+        Cartfunctions.addElement(ShoppingCart, ComputerListe[1], 1);
+        Cartfunctions.addElement(ShoppingCart, ComputerListe[2], 1);
+        Cartfunctions.addElement(ShoppingCart, ComputerListe[3], 1);
+
+        Element TheArray[] = TheCartfunctions.makeArray(ShoppingCart);
+
+        System.out.println(TheArray[0].getComputer().getComputerdetails().getDetailName());
+        System.out.println(TheArray[1].getComputer().getComputerdetails().getDetailName());
+        System.out.println(TheArray[2].getComputer().getComputerdetails().getDetailName());
 
 
-        System.out.println(ComputerListe[0].getComputerdetails().getDetailName());
-        System.out.println(ComputerListe[1].getComputerdetails().getDetailName());
-        System.out.println(ComputerListe[2].getComputerdetails().getDetailName());
-        System.out.println(ComputerListe[3].getComputerdetails().getDetailName());
-        System.out.println(ComputerListe[4].getComputerdetails().getDetailName());
-
-       //Computer Suche test
+       /*Computer Suche test
         Computer ComputerErgebnisse[] = TheFunctions.searchComputer("Xtreme");
         for (int i = 0; i < ComputerErgebnisse.length; i++) {
 
@@ -64,10 +76,10 @@ public class Tech4kek {
         AccountFunctions AccF = new AccountFunctions();
         Account LoginPerson = new Account();
 
-
+        */
         //AccF.Register("Jann204@t-online.de", "Penis1", "Lukas", "Arnold", "Penis2", "Penis3", 99869, "Penis4", "Penis5");
 
-        LoginPerson = AccF.Login("Jan204@t-online.de","Lolbob123");
+        //LoginPerson = AccF.Login("Jan204@t-online.de","Lolbob123");
 
 
 

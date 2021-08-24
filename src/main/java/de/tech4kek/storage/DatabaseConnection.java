@@ -11,7 +11,7 @@ public class DatabaseConnection {
 
         try (Connection myConn = DriverManager.getConnection(url, user, password)){
 
-           //Zum Testen ob Connection geht
+           /*Zum Testen ob Connection geht
             Statement myStmt = myConn.createStatement();
             String sql = "select * from account";
             ResultSet rs = myStmt.executeQuery(sql);
@@ -21,7 +21,7 @@ public class DatabaseConnection {
                 System.out.println(rs.getString("FirstName"));
 
             }
-
+            */
             myConnection = DriverManager.getConnection(url, user, password);
 
         }catch (SQLException e){

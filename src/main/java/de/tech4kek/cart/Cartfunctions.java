@@ -58,11 +58,15 @@ public class Cartfunctions {
 
         Element CartArray[] = new Element[counter];
 
+        for(int i = 0; i < counter; i++){
+            CartArray[i] = new Element();
+        }
+
 
         Anchor = TheCart.getFirstElement();
-
+        Anchor = Anchor.getNextElement();
         int counter2 = 0;
-        while (Anchor.getNextElement() != null){
+        while (Anchor != null){
 
            CartArray[counter2].setM_CountOfComputers(Anchor.getM_CountOfComputers());
            CartArray[counter2].setNextElement(Anchor.getNextElement());
