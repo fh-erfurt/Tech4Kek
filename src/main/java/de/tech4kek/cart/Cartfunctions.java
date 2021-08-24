@@ -40,6 +40,40 @@ public class Cartfunctions {
         return NewElement;
     };
 
+    //Is for chaneging the stockcount of an Element in the Cart List
+    public static Element delNumberOfElements(Cart TheCart, Computer TheComputer, int number){
+        Element Anchor = TheCart.getFirstElement();
+
+        int counter = 0;
+        while (Anchor.getNextElement() != null){
+            Anchor = Anchor.getNextElement();
+            counter += 1;
+            if(Anchor.getComputer() == TheComputer){
+
+                if(Anchor.getM_CountOfComputers()-number < 0){
+                    //less computers in the list then the person wants to remove
+                    return null;
+                }
+
+                if(Anchor.getM_CountOfComputers()-number == 0){
+                    Anchor.setM_CountOfComputers(Anchor.getM_CountOfComputers()-number);
+                    TheComputer.setOnStock(TheComputer.getOnStock()+number);
+                    delElement(TheCart, counter);
+                    return Anchor = TheCart.getFirstElement();
+                }
+
+
+                Anchor.setM_CountOfComputers(Anchor.getM_CountOfComputers()-number);
+                TheComputer.setOnStock(TheComputer.getOnStock()+number);
+
+                return Anchor;
+            };
+        }
+        //Element does not exist
+        return null;
+    }
+
+
     public static boolean delElement(Cart TheCart, int Element_Number){
         Element Anchor = TheCart.getFirstElement();
         Element Placeholder = TheCart.getFirstElement();
@@ -61,8 +95,6 @@ public class Cartfunctions {
 
         return true;
     }
-
-
 
     public static Element searchElement(Cart TheCart, int ItemID){ //search for ItemID
         Element Anchor = TheCart.getFirstElement();
