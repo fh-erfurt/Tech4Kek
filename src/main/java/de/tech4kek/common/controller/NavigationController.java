@@ -51,11 +51,11 @@ public class NavigationController {
 
     @GetMapping("/shoppingCart")
     public String getShoppingCart(Model model){
-
+        Element shoppingCartArray[] = cartfunctions.makeArray(shoppingCart);
 
         model.addAttribute("activePage", "shoppingCart");
+        model.addAttribute("shoppingCartArray", shoppingCartArray);
 
-        model.addAttribute("shoppingCart", shoppingCart);
         return "shoppingCart";
     }
 
@@ -64,6 +64,7 @@ public class NavigationController {
     public String getItem(Model model, @RequestParam("id") int id) {
         //System.out.println(id);
         Computer wantedComputer = null;
+
 
         for (Computer computer : ComputerListe) {
             if (computer.getItemId() == id) {
@@ -84,6 +85,8 @@ public class NavigationController {
     @RequestMapping(value = "/item", method = RequestMethod.POST)
     public ModelAndView addCart(@ModelAttribute("itemData") ItemData itemData) {
         int id = itemData.getId();
+        int count = itemData.getCount();
+
 
         Computer wantedComputer = null;
 
@@ -95,10 +98,11 @@ public class NavigationController {
         System.out.println(id);
 
 
-        element.setComputer(wantedComputer);
-        shoppingCart.setFirstElement(element);
+        cartfunctions.addElement(shoppingCart, wantedComputer, count);
 
-        System.out.println(element.getComputer().getItemId());
+
+
+        //System.out.println(element.getComputer().getItemId());
 
         return new ModelAndView("redirect:/item?id=" + id);
     }
