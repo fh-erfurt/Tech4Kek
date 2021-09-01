@@ -22,6 +22,11 @@ public class NavigationController {
     Element element = new Element();
     Cartfunctions cartfunctions = new Cartfunctions();
 
+    @GetMapping("/")
+    public String getIndex(Model model){
+        //model.addAttribute("activePage", "index");
+        return "index";
+    }
 
     @GetMapping("/products")
     public String getProducts(Model model){
