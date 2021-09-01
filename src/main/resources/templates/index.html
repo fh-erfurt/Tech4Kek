@@ -2,10 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" class="h-100">
 <head>
     <meta charset="UTF-8">
-    <title>Spring MVC</title>
+    <title>Tech4kek</title>
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link th:href="@{styles/main.css}" rel="stylesheet" />
+    <link th:href="@{styles/index.css}" rel="stylesheet" />
 </head>
 <body class="d-flex flex-column h-100">
 
@@ -13,15 +13,91 @@
 
 
 <main role="main" class="flex-shrink-0">
-    <div class="container mt-5">
-        <div class="jumbotron">
-
-            <h1 class="display-4">Home!</h1>
-            <p>Das ist die Home</p>
-
-
+    <header>
+        <!-- header inner -->
+        <div  class="head_top">
+            <!-- banner -->
+            <section class="banner_main">
+                <div class="container-fluid">
+                    <div class="row d_flex">
+                        <div class="col-md-5">
+                            <div class="text-bg">
+                                <h1>Tech4kek</h1>
+                                <h1>Computer und <br>laptop shop</h1>
+                                <strong>Preis des besten Webshops</strong>
+                                <span>von 2021</span>
+                                <a href="#">Kaufen sie jetzt!</a>
+                            </div>
+                        </div>
+                        <div class="col-md-7 padding_right1">
+                            <div class="text-img">
+                                <figure><img src="pictures/startseite/top_img.png" alt="#"/></figure>
+                                <h3>01</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </header>
+    <!-- end banner -->
+    <!-- about -->
+    <div id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>Über Tech4kek</h2>
+                        <span>Bei “Tech4Kek” handelt es sich um einen online Handel, welcher sich auf den Verkauf von komplett PCs fokussiert.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 offset-md-2 ">
+                    <div class="about_box ">
+                        <figure><img src="pictures/startseite/about_img.png" alt="#"/></figure>
+                        <a class="read_more" href="#">Lesen sie mehr</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- about -->
+    <!-- best -->
+    <div id="" class="best">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>Wir handeln mit den besten waren! </h2>
+                        <span>Es werden nur die besten Computer und Laptops auf unserer Webseite verkauft!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="best_box">
+                        <h4>100% zufriedene<br>Kunden</h4>
+                        <p>Durch schnellen Versand und beste Qualität!</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="best_box">
+                        <h4>Schnellster<br>Versand</h4>
+                        <p>Der schnellste und versicherte Versand über DHL!</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="best_box">
+                        <h4>100%<br>Qualität</h4>
+                        <p>Die beste Qualität bestätigt durch Kunden!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end best -->
+
 </main>
 
 
