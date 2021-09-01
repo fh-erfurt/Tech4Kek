@@ -1,6 +1,6 @@
 # Tech4Kek
 
-Für das Modul <b>Java 1</b> entwickeln wir in unserem Team eine Java-Applikation für den Verkauf von Fertig-PC´s.
+Für das Modul <b>Java 2</b> entwickeln wir in unserem Team eine Java-Applikation für den Verkauf von Fertig-PC´s.
 
 ### Projektteam
 * **John Reinecke** - [Profil](https://github.com/JFuqX)
@@ -11,7 +11,7 @@ Für das Modul <b>Java 1</b> entwickeln wir in unserem Team eine Java-Applikatio
 <details>
 <summary> Projektbeschreibung </summary>
 <br>
-Für das Modul <b>Java 1</b> entwickeln wir in unserem Team eine Java-Applikation für den Verkauf von Fertig-PC´s.
+Für das Modul <b>Java 2</b> entwickeln wir in unserem Team eine Java-Applikation für den Verkauf von Fertig-PC´s.
 </details>
 
 <details>
