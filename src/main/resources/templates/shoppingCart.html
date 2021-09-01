@@ -3,29 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Tech4kek</title>
+
+  <link th:href="@{styles/shoppingCart.css}" rel="stylesheet"/>
+  <link th:href="@{styles/styles.css}" rel="stylesheet"/>
   <link rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <link th:href="@{styles/shoppingCart.css}" rel="stylesheet"/>
 </head>
 <body class="d-flex flex-column h-100">
 
 <div th:replace="~{fragments/header :: header}"></div>
-
-<main role="main" class="flex-shrink-0">
-<!--  <div class="container mt-5">
-    <h1 class="display-4">Warenkorb</h1>
-
-    <div th:each="computer: ${shoppingCartArray}" class="jumbotron">
-      <h4 th:text="${computer.getComputer().getComputerdetails().getDetailName()}">Name</h4><br>
-      <h4 th:text="${computer.getM_CountOfComputers()}">Name</h4><br>
-      <div class="row">
-        <div class="col-4">
-         <img th:src="@{${'/pictures/products/'+computer.getComputer.getItemId()+'.jpg'}}" style="width: 100%">
-        </div>
-      </div>
-    </div>
-  </div>-->
-</main>
 
 <!-- Shoping Cart Section Begin -->
 <section class="shoping-cart spad">
@@ -36,10 +22,10 @@
           <table>
             <thead>
             <tr>
-              <th class="shoping__product">Products</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Total</th>
+              <th class="shoping__product">Produkt</th>
+              <th>Preis</th>
+              <th>Anzahl</th>
+              <th>Insgesamt</th>
               <th></th>
             </tr>
             </thead>
@@ -49,7 +35,7 @@
                 <img th:src="@{${'/pictures/products/'+computer.getComputer.getItemId()+'.jpg'}}" style="width: 200px; height: 200px; "alt="">
                 <h5 th:text="${computer.getComputer().getComputerdetails().getDetailName()}"></h5>
               </td>
-              <td th:text="${computer.getComputer().getComputerdetails().getPrice()}" class="shoping__cart__price">
+              <td th:text="${computer.getComputer().getComputerdetails().getPrice()}+'€'" class="shoping__cart__price">
                 price
               </td>
               <td class="shoping__cart__quantity">
@@ -59,7 +45,7 @@
                   </div>
                 </div>
               </td>
-              <td th:text="${totalPrice}" class="shoping__cart__total">
+              <td th:text="${totalPrice}+'€'" class="shoping__cart__total">
                 totalPrice
               </td>
               <td class="shoping__cart__item__close">

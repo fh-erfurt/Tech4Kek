@@ -13,8 +13,6 @@
 
 <main role="main" class="flex-shrink-0">
     <div class="container mt-5">
-        <h1 class="display-4">products</h1>
-
         <div th:each="Computer: ${ComputerListe}" class="jumbotron">
             <h4 th:text="${Computer.getComputerdetails().getDetailName()}">Name</h4><br>
             <div class="row">
@@ -23,9 +21,9 @@
                 </div>
                 <div class=col-8>
                     <p th:text="${Computer.getComputerdetails().getCpuName()}">Name</p>
-                    <p th:text="${Computer.getComputerdetails().getGpu()}">Name</p>
-                    <p th:text="${Computer.getComputerdetails().getPrice()}">Name</p>
-                    <a th:href="@{/item(id=${Computer.getItemId()})}">Jezt Kaufen</a>
+                    <p th:text="${Computer.getComputerdetails().getGpu()}">CPU</p>
+                    <p th:text="${Computer.getComputerdetails().getPrice()}+'€'">Preis</p>
+                    <a th:href="@{/item(id=${Computer.getItemId()})}">Jetzt Kaufen</a>
                 </div>
             </div>
         </div>

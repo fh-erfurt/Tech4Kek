@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://thymeleaf.org" class="h-100">
 <head>
     <meta charset="UTF-8">
-    <title>Tech4kek</title>
+    <title th:text="'Tech4kek - '+${computer.getComputerdetails().getDetailName()}">Tech4kek</title>
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link th:href="@{styles/styles.css}" rel="stylesheet"/>
@@ -12,35 +12,6 @@
   <div th:replace="~{fragments/header :: header}"></div>
 </head>
 <body>
-
-<!--<div class="container-fluid">
-    <div class="row">
-        <div class="col-5">
-                <img th:src="@{${'/pictures/products/'+computer.getItemId()+'.jpg'}}" class="float-right" style="width: 200px">
-        </div>
-
-        <div class="col-7">
-            <h3 th:text="${computer.getComputerdetails().getDetailName()}"></h3>
-            <div th:text="'ID: '+${computer.getItemId}">Search Query</div>
-            <div th:text="'CPU: '+${computer.getComputerdetails().getCpuName()}"></div>
-            <div th:text="'CPU Takt: '+${computer.getComputerdetails().getCpuClock()}+'Ghz'"></div>
-            <div th:text="'CPU Kerne: '+${computer.getComputerdetails().getCpuCoreAmount()}"></div>
-            <div th:text="'CPU Threads: '+${computer.getComputerdetails().getCpuThreadAmount()}"></div>
-            <div th:text="'GPU: '+${computer.getComputerdetails().getGpu()}"></div>
-            <div th:text="'Grafikspeichergröße: '+${computer.getComputerdetails().getVramAmount()}+'Gb'"></div>
-            <div th:text="'GPU Takt: '+${computer.getComputerdetails().getGpuClock()}+'Mhz'"></div>
-            <div th:text="'Arbeitsspeicher: '+${computer.getComputerdetails().getRamName()}"></div>
-            <div th:text="'Arbeitsspeichergröße: '+${computer.getComputerdetails().getRamSize()}+'Gb'"></div>
-            <div th:text="'Beschreibung: '+${computer.getComputerdetails().getDescription()}"></div>
-
-            <form action="#" th:action="@{/item}" th:object="${itemData}" method="post">
-
-                <input type="hidden"  th:value="${computer.getItemId}" name="id" id="id" />
-                <input  type="submit" value="in den Warenkorb" />
-            </form>
-        </div>
-    </div>
-</div>-->
 
 <!-- Product section-->
 <section class="py-5">
@@ -61,7 +32,7 @@
                 <p class="mb-0" th:text="'GPU Takt: '+${computer.getComputerdetails().getGpuClock()}+'Mhz'"></p>
                 <p class="mb-0" th:text="'Arbeitsspeicher: '+${computer.getComputerdetails().getRamName()}"></p>
                 <p th:text="'Arbeitsspeichergröße: '+${computer.getComputerdetails().getRamSize()}+'Gb'"></p>
-                <p th:text="'Beschreibung: '+${computer.getComputerdetails().getDescription()}" class="lead">Beschreibung</p>
+                <p th:text="${computer.getComputerdetails().getDescription()}" class="lead">Beschreibung</p>
                     <form class="d-flex" action="#" th:action="@{/item}" th:object="${itemData}" method="post">
                         <input type="hidden"  th:value="${computer.getItemId}" name="id" id="id" />
                         <input class="form-control text-center me-3" type="num" value="1" id="count" name="count" style="max-width: 3rem" />
