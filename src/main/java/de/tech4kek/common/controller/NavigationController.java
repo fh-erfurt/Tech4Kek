@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+
 
 @Controller
 public class NavigationController {
@@ -50,8 +53,14 @@ public class NavigationController {
     }
 
     @GetMapping("/shoppingCart")
-    public String getShoppingCart(Model model){
+    public String getShoppingCart(Model model, HttpServletResponse response){
         Element shoppingCartArray[] = cartfunctions.makeArray(shoppingCart);
+
+
+
+
+
+
 
         model.addAttribute("activePage", "shoppingCart");
         model.addAttribute("shoppingCartArray", shoppingCartArray);
