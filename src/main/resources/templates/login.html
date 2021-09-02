@@ -13,14 +13,6 @@
 <main role="main" class="flex-shrink-0">
     <div class="container mt-5">
         <div class="jumbotron">
-
-
-<!--
-Einfach für die anderen Seiten den bereich oben und unten kopieren und dazwischen den Seiteninhalt kopieren. Nicht vergessen im Navigationcontroller.jar die neue Seite anzulegen
-Für die überschrift die klasse in den header packen
--->
-
-
             <div th:if="${param.error}">
                 Invalid username or password.
             </div>
@@ -32,15 +24,10 @@ Für die überschrift die klasse in den header packen
 
             <div class="login">
                 <br>
-                <h1 class="display-4">Login</h1>
-
+                <h1 class="display-4">Login</h1><br>
 
                     <!-- The Login Form -->
                     <section  class=loginstyle>
-                        <? if(isset($error)): ?>
-                        <p class='errorMessage' id=phpError><?=$error?></p>
-                        <? endif;?>
-
 
                         <!--/*@thymesVar id="login" type="de.tech4kek.common.controller.Logindata"*/-->
                         <form method='post' id='login-form' th:action="@{/loginform}" th:object="${login}">
@@ -51,20 +38,12 @@ Für die überschrift die klasse in den header packen
                         <label for='password'>Passwort</label> <br />
                         <input type='password' th:field="*{pw}" name='password' id='password' /><br />
                         <span id='passwordError'></span><br />
-                        <input type='submit' name='submitBtn' value='Login' class='loginButton'><br />
+                        <input type='submit' name='submitBtn' value='Login' class='loginButton'><br /><br>
+                            <p>Noch kein Account? <a th:href="@{/register}"> Jetzt registrieren</a></p><br/>
                         </form>
                     </section>
-
-
-
-
-
                 </section>
             </div>
-
-
-
-
         </div>
     </div>
 </main>
